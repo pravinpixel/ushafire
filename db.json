@@ -1,0 +1,215 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "productname": "Jon",
+      "category": "BarCode Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "EPSON",
+      "quantity": 187,
+      "status": "inStock"
+    },
+    {
+      "id": 2,
+      "productname": "Cersei",
+      "category": "BarCode Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "HoneyWel",
+      "quantity": 50,
+      "status": "inStock"
+    },
+    {
+      "id": 3,
+      "productname": "Jaime",
+      "category": "BarCode Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "EPSON",
+      "quantity": 178,
+      "status": "inStock"
+    },
+    {
+      "id": 4,
+      "productname": "Arya",
+      "category": "Id Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "EPSON",
+      "quantity": 75,
+      "status": "inStock"
+    },
+    {
+      "id": 5,
+      "productname": "Daenerys",
+      "category": "BarCode Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "HID",
+      "quantity": 90,
+      "status": "Out Of Stock"
+    },
+    {
+      "id": 6,
+      "productname": "Margery",
+      "category": "PAN Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "EPSON",
+      "quantity": 17,
+      "status": "inStock"
+    },
+    {
+      "id": 7,
+      "productname": "Ferrara",
+      "category": "BarCode Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "HID",
+      "quantity": 87,
+      "status": "inStock"
+    },
+    {
+      "id": 8,
+      "productname": "Rossini",
+      "category": "Epson Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "EPSON",
+      "quantity": 112,
+      "status": "inStock"
+    },
+    {
+      "id": 9,
+      "productname": "Harvey",
+      "category": "BarCode Printer",
+      "supplier": "BarCode solution PET limited",
+      "brand": "EPSON",
+      "quantity": 287,
+      "status": "inStock"
+    }
+  ],
+  "permissions":{
+      "manage_roles_permissions":{
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      },
+      "manage_users_staffs":{     
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      },
+      "data_protection":{     
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      },
+      "contacts_management":{
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      },
+      "customer_information_management":{     
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      },
+      "lead_management":{     
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      },
+      "opportunity_management":{     
+        "edit":true,
+        "create":true,
+        "delete":false,
+        "export":false
+      }
+  }  ,
+  "theme":{  
+   "grey" : {
+  "100": "#F9FAFB",
+  "200": "#F9F9F9",
+  "300": "#DFE3E8",
+  "400": "#C4CDD5",
+  "500": "#919EAB",
+  "600": "#898989",
+  "700": "#454F5B",
+  "800": "#202020",
+  "900": "#161C24"
+},
+
+ "customColor":  {
+  "darkRed": "#F25C54",
+  "darkGreyOne": "#808285",
+  "darkGreyTwo": "#686868",
+  "ligthGreyOne": "#DCDCDC",
+  "lightPink": "#FEECF1",
+  "darkPink": "#F1416C"
+},
+
+ "primary":  {
+  "lighter": "#f9ac6a",
+  "light": "#f6933e",
+  "main": "#F5811F",
+  "dark": "#f57b11",
+  "darker": "#da6804",
+  "contrastText": "#FFFFFF",
+  "backgoundColorLight": "#fdc99e"
+},
+
+ "secondary" : {
+  "lighter": "#3cc2fe",
+  "light": "#23b9fe",
+  "main": "#00B2FF",
+  "dark": "#009ee4",
+  "darker": "#008dcd",
+  "contrastText": "#FFFFFF",
+  "backgoundColorLight": "#64d0ff"
+},
+
+"info":  {
+  "lighter": "#CAFDF5",
+  "light": "#61F3F3",
+  "main": "#00B8D9",
+  "dark": "#006C9C",
+  "darker": "#003768",
+  "contrastText": "#FFFFFF",
+  "backgoundColorLight": "#DCDCDC",
+  "extralight": "#808285"
+},
+
+"success": {
+  "lighter": "#C8FAD6",
+  "light": "#DCF5E7",
+  "main": "#50CD89",
+  "dark": "#007867",
+  "darker": "#004B50",
+  "contrastText": "#FFFFFF",
+  "backgoundColorLight": "#DCDCDC"
+},
+
+"warning":  {
+  "lighter": "#FFF5CC",
+  "light": "#FEECF1",
+  "main": "#F1416C",
+  "dark": "#B76E00",
+  "darker": "#7A4100",
+  "extralight": "#F25C54",
+  "backgoundColorLight": "#DCDCDC"
+},
+
+ "error":  {
+  "lighter": "#faa6a2",
+  "light": "#FEECF1",
+  "main": "#F1416C",
+  "dark": "#f14d44",
+  "darker": "#ef3228",
+  "contrastText": "#FFFFFF"
+},
+
+ "common":  {
+  "black": "#202020",
+  "white": "#FFFFFF"
+}}
+}
