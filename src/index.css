@@ -172,3 +172,8 @@
 }
 
 
+.MuiAutocomplete-option[aria-selected='true'] {
+  background: #f2dde3 !important;
+}
+
+
