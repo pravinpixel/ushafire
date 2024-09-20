@@ -1,0 +1,128 @@
+{
+  "task": [
+    {
+      "rrule": "DTSTART:20240731T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;BYDAY=TU,WE,TH,FR;COUNT=20",
+      "id": "6"
+    },
+    {
+      "id": "b707",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "bc2c",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "4c68",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "3e7a",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "763a",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "8c5f",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "9ea2",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "e55e",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "945e",
+      "rrule": "DTSTART:20240802T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    },
+    {
+      "id": "dd9f",
+      "rrule": "DTSTART:20240805T183000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;COUNT=20",
+      "due_date": "Due by today",
+      "priority": "medium",
+      "post": "11 jul",
+      "title": "TM00001-Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "name": "Santhiya",
+      "date": "04 Jul 2024",
+      "time": "08:46 am"
+    }
+  ]
+}

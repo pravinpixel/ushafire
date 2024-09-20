@@ -1,0 +1,25 @@
+type LoginType = {
+	id?: number;
+	first_name?: string;
+	name?: string;
+	last_name?: string;
+	email?: string;
+	hash_password?: string;
+	password?: string;
+	profile_image?: string;
+	phone_number?: string;
+	department_id?: number;
+	designation_id?: number;
+	location_id?: number;
+	branch_id?: number;
+	designation?: EssentailTypeListResponse;
+	department_id?: EssentailTypeListResponse;
+	location?: EssentailTypeListResponse;
+	branch?: EssentailTypeListResponse;
+	status?: number;
+	branch_name?: string;
+	location?: string;
+	rating_count?: number;
+	pending_task?:number;
+	task_percentage?: number;
+};

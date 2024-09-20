@@ -1,0 +1,20 @@
+// ----------------------------------------------------------------------
+
+export const HEADER = {
+	H_MOBILE: 64,
+	H_DESKTOP: 0,
+	H_DESKTOP_OFFSET: 72 - 16,
+};
+
+export const NAV = {
+	WIDTH: 370,
+	CHILDMARGIN : 20,
+};
+
+export const SESSIONANDLOCAL = {
+	PROJECT_NAME_ROLE: "PROJECT_NAME__ROLE",
+	PROJECT_NAME_LABEL: "AUTOPACK V1.0",
+	PROJECT_NAME_EMPLOYEEID: "PROJECT_NAME__EMPLOYEEID",
+	PROJECT_ACCESS_TOKEN: "ACCESS_TOKEN",
+	PROJECT_REFRESH_TOKEN: "REFRESH_TOKEN",
+};
