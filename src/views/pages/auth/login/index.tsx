@@ -58,7 +58,7 @@ function Login() {
 				minHeight={'43px'}
 				mt={{xs:5,md:0}}
 			>
-				Login with your email address
+				Login with your Mobile Number
 			</Typography>
 			<Box
 				component={"form"}
