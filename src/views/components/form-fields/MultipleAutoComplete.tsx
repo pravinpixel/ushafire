@@ -92,21 +92,24 @@ const MultiAutoCompleteField = (props: {
                             >
                                 {option.name}
                             </MenuItem>
+                          
                             {option.id === dropDowns[dropDowns.length - 1].id && (
+                                <Box height={{sm:'33px',xs:'55px'}} >
                                 <Box sx={{
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 7, backgroundColor: 'white', position: 'fixed',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 7, backgroundColor: 'white',  position: 'fixed',
                                     bottom: 0, width: '100%'
                                 }}>
                                     <Button sx={{
                                         width: 120,
                                         padding: 1,
                                         marginY: { xs: 2, sm: 1 },
-
                                     }} size="small" onClick={handleClose}>
                                         Close
                                     </Button>
                                 </Box>
+                                </Box>
                             )}
+                           
                         </>
                     )}
                     // ListboxComponent={(listboxProps) => (
