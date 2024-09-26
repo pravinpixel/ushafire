@@ -71,7 +71,7 @@ const CreateTaskValidation = yup.object().shape({
 });
 
 const CompletTaskPopupValidation = yup.object().shape({
-	rating_remark: yup.string().required("Rating Remark is required"),
+	// rating_remark: yup.string().required("Rating Remark is required"),
 	task_rating: yup.number()
     .required('Rating is required')
     .min(1, 'Rating is required'),

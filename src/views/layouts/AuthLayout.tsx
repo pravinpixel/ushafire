@@ -46,7 +46,7 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 			</Box>
 			<Box
 				sx={{
-					position: "absolute",
+					position: "fixed",
 					bottom: 50,
 					right: 40,
 					zIndex:2
