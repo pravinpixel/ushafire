@@ -38,7 +38,7 @@ export const uploadValidationFile = (files: DocumentsType[]) => {
 	const validFiles: DocumentsType[] = [];
 	const invalidTypeFiles = [];
 	const inValidSizeFile = [] 
-	const max = 2
+	const max = 5
 	files?.forEach((file)=>{
 		if(file?.id) {
 			validFiles.push(file)
@@ -60,7 +60,7 @@ export const uploadValidationFile = (files: DocumentsType[]) => {
 		toast.error("Accepted file type are " + uploadAccecpt + "");
 	}
 	if (inValidSizeFile?.length > 0) {
-		toast.error("Max allowed 2MB");
+		toast.error(`Max allowed ${max}MB`);
 	}
 	return validFiles;
 };
