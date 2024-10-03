@@ -70,10 +70,16 @@ const TaskForm = ({
 				const today = new Date();
 				today.setHours(0, 0, 0, 0);
 
-				if (startDate < today) {
-					throw new Error("start date must be today or in the future");
+				// if (startDate < today) {
+				// 	throw new Error("start date must be today or in the future");
+				// }
+				const isEditing = !!defaultValues?.id;
+                const originalStartDate = defaultValues?.recurrence
+                ? RRule.fromString(defaultValues?.recurrence).options.dtstart
+				: null;
+                if ((!isEditing || startDate.getTime() !== originalStartDate?.getTime()) && startDate < today) {
+					throw new Error("Start date must be today or in the future");
 				}
-
 				if (startDate && untilDate && startDate.getTime() === untilDate.getTime()) {
 					throw new Error("Start date and end date cannot be the same");
 				}
