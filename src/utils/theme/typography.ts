@@ -46,6 +46,7 @@ export const fontWeightBold = 700;
 
 
 const fontSizeList: TypographyOptions['fontSizeList'] = {
+	f10: 10,
 	f12: 12,
 	f14: 14,
 	f16: 16,

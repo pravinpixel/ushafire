@@ -40,4 +40,4 @@ export { default as checkIconFill } from "../../assets/images/checkIconFill.png"
 export { default as radioIcon } from "../../assets/images/radioIcon.png";
 export { default as radioChecked } from "../../assets/images/radioChecked.png";
 export { default as avatarImage } from "../../assets/images/avatarImage.png";
-
+export {default as ReccurenceIcon} from "../../assets/images/reccurence-icon.png"

@@ -3,6 +3,7 @@ import React, { MouseEvent } from "react";
 import {
 	calenderTask,
 	notificationIcon,
+	ReccurenceIcon,
 } from "../../../../utils/helpers/assetHelper";
 import { statusArray } from "../../../../utils/helpers/globalHelper";
 import { fontWeightBold, fontWeightRegular } from "../../../../utils/theme/typography";
@@ -94,6 +95,13 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						>
 							{task?.priority?.name}
 						</Typography>
+						{
+							task?.is_recurrence === 1 &&(
+                             <Box sx={{maxWidth:'38px',height:'24px',borderRadius:'40px',padding:'4px 11px 4px 11px',border:'1px solid rgba(226, 226, 226, 1)',background:'white',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                              <img src={ReccurenceIcon} width={11} height={11} alt="reccurence icon"/>
+							 </Box>
+							)
+						}
 					</Stack>
 					{/* <Box marginRight={2}>Age:<span style={{color:getAgeColor(age)}}>{age}</span></Box> */}
 					{params?.tab !== "archived" && (

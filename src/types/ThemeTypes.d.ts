@@ -8,7 +8,7 @@ import {
 	TypographyUtils,
 } from "@mui/material/styles/createTypography";
 
-type CustomVariants = "f12" | "f14" | "f16" | "f18" | "f20" | "f23" | "f24" | "f28" | "f32" | 'f40' | 'f52';
+type CustomVariants = "f10" | "f12" | "f14" | "f16" | "f18" | "f20" | "f23" | "f24" | "f28" | "f32" | 'f40' | 'f52';
 type CustomColorKey = "blue" | "yellow" | "organge" | "red" | "green"| "low" | "medium" | "high" | "darkGreyOne" ;
 
 export interface Typography
