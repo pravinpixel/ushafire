@@ -20,7 +20,7 @@ const getPopUpContent = (type: string | null) => {
         case 'all':
             return {
                 title: 'Delete Task',
-                content: 'Are you sure you want to Delete All Upcoming Recurrence Tasks ?',
+                content: 'Are you sure you want to Delete All Upcoming Recurrence Tasks?',
             };
         case 'current':
             return {
