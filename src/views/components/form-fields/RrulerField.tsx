@@ -40,12 +40,12 @@ const RrulerField = (props: { name: string }) => {
 		defaultValue: "",
 		control,
 	});
-
+	const ruleValue = field?.value || "";
 	return (
 		<StyledBox>
 			<ReactRRuleWidget
 				{...field}
-
+                value={ruleValue}
 				config={{
 					hideStart: false,
 					count: 20,

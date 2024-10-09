@@ -9,7 +9,6 @@ import CustomButton from "../../../components/Button";
 import CustomCheckbox from "../../../components/form-fields/Checkbox";
 import DatePickerField from "../../../components/form-fields/DatePickerField";
 import InputField from "../../../components/form-fields/InputField";
-import MultiSelectField from "../../../components/form-fields/MultiSelect";
 import RrulerField from "../../../components/form-fields/RrulerField";
 import SelectField from "../../../components/form-fields/SelectField";
 import UploadFile from "../../../components/form-fields/UploadFile";
