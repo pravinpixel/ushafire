@@ -123,6 +123,7 @@ const ListTask = React.memo(() => {
 		priority_id: [],
 		deadline: [],
 		sort_column: null,
+		task_category_id:[],
 	});
 
 
@@ -223,6 +224,7 @@ const ListTask = React.memo(() => {
 						setOpenDrawer={setOpenDrawer}
 						isLoadMoreLoading={isLoadMoreLoading}
 						handleLoadMore={handleLoadMore}
+						
 					/>
 				),
 				value: "archived",

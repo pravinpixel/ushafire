@@ -60,6 +60,7 @@ interface TaskPagination extends PaginationType {
 	priority_id: string[];
 	sort_column: "new_task" | "created_at" | "asce" | "desc" | null;
 	deadline: string[];
+	task_category_id: number[];
 }
 
 

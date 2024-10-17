@@ -29,6 +29,7 @@ export const InitialPagination : TaskPagination = {
 	priority_id: [],
 	deadline: [],
 	sort_column : null,
+	task_category_id:[]
 }
 
 

@@ -40,4 +40,7 @@ export { default as checkIconFill } from "../../assets/images/checkIconFill.png"
 export { default as radioIcon } from "../../assets/images/radioIcon.png";
 export { default as radioChecked } from "../../assets/images/radioChecked.png";
 export { default as avatarImage } from "../../assets/images/avatarImage.png";
-export {default as ReccurenceIcon} from "../../assets/images/reccurence-icon.png"
+export {default as ReccurenceIcon} from "../../assets/images/reccurence-icon.png";
+export {default as typeFilter} from "../../assets/images/type-filter.png";
+export {default as typeCancelIcon} from "../../assets/images/filter-cancel.png";
+export {default as typeDownArrow} from "../../assets/images/type-arrow-down.png";
