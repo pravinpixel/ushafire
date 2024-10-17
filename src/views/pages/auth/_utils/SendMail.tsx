@@ -56,7 +56,7 @@ function SendMail() {
 					name="phone_number"
 					label="Phone Number"
 					placeholder="Enter your phone number "
-					description="Please enter your phone number to receive a OTP(One time password)."
+					description="Please enter your phone number to receive a OTP(One time password) in Mail."
 					size="medium"
 				/>
 			</Box>

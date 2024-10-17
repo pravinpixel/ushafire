@@ -31,6 +31,7 @@ const menuItems: MenuItemData[] = [
 			{ title: "Z to A", value: "z_to_a" },
 			{ title: "Last update", value: "last_update" },
 			{ title: "New task", value: "new_task" },
+			{ title: "Marked as completed", value: "mark_as_completed" },
 		],
 	},
 	{
@@ -183,7 +184,7 @@ export default function MenuItemFilter({ params, setParams }: ParamsType) {
 				disablePortal
 				sx={{
 					zIndex: 10, "& .MuiPaper-root": {
-						width: '252px',
+						width:isXs ? '252px' : '315px',
 						maxHeight:isXs ? '100px' : 'auto',
 						minHeight: '200px',
 						overflow : isXs ? 'auto' : 'none',
@@ -242,7 +243,7 @@ export default function MenuItemFilter({ params, setParams }: ParamsType) {
 
 															}}
 														>
-															{menu.children?.map((dataValue, childIndex) => (
+															{menu.children?.filter((child)=> !(params?.tab === "archived" && child.value === 'mark_as_completed')).map((dataValue, childIndex) => (
 																<FormControlLabel
 																	key={childIndex}
 																	value={dataValue.value}

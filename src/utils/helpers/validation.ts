@@ -70,11 +70,18 @@ const CreateTaskValidation = yup.object().shape({
 	}),
 });
 
+const whenRatingIs = (expectedRatings: number[], schema: yup.StringSchema)=>{
+	return yup
+	     .string()
+		 .when("task_rating", ([task_rating]:number[])=> expectedRatings.includes(task_rating) ? schema : yup.string().notRequired());
+		 
+}
 const CompletTaskPopupValidation = yup.object().shape({
-	// rating_remark: yup.string().required("Rating Remark is required"),
 	task_rating: yup.number()
     .required('Rating is required')
     .min(1, 'Rating is required'),
+	rating_remark: whenRatingIs([0,1,2], yup.string().required("Remark is required")),
+	
 });
 
 export { LoginValidation, ForgotPasswordValidation, CreateTaskValidation, CompletTaskPopupValidation,ChangePasswordValidation };
