@@ -53,6 +53,7 @@ type TaskFormType = {
 	comments?: TaskComment[];
 	is_delete?:boolean
 	task_no?:string
+	is_self_assign?:0 | 1;
 };
 
 interface TaskPagination extends PaginationType {

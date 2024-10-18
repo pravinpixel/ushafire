@@ -28,6 +28,7 @@ import ConfrimPopUp from "./popupComponents/ConfrimPopUp";
 import Transition from "./popupComponents/Transition";
 import UploadDocs from "./UploadDocs";
 import MarkButton from "./MarkButton";
+import CompletePopUp from "./popupComponents/CompletePopUp";
 
 const statusIcon = (status?: EssentailStatus["name"]) => {
 	switch (status) {
@@ -173,12 +174,13 @@ export default function CardView({
 	const { user } = userStore();
 	const theme = useTheme();
 	const isXs = useMediaQuery(theme.breakpoints.down("sm"));
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(null);
 	const [openCancelPopup, setOpenCancelPopup] = useState(false);
 	const id = viewTask?.id || null;
 	const taskStatus = viewTask?.status?.name || "";
+	
 	const handleClose = () => {
-		setOpen(false);
+		setOpen(null);
 	};
 	const handleCancel = () => {
 		setOpenCancelPopup(false);
@@ -213,10 +215,11 @@ export default function CardView({
 	// 	? "Completed"
 	// 	: "";
 
-	const handleCompleteTask = () => {
-		setOpen(true);
+	const handleCompleteTask = (val:any) => {
+		setOpen(val);
 	};
 	const { mutateAsync } = useCloseTask();
+
 	return (
 		<>
 			<Box
@@ -532,7 +535,7 @@ export default function CardView({
 										loading={false}
 										label="Complete the task"
 										type="submit"
-										onClick={handleCompleteTask}
+										onClick={()=>handleCompleteTask( viewTask?.is_self_assign === 0 ? 'my-task' : 'self-task')}
 										startIcon={
 											<img
 												src={mark}
@@ -612,7 +615,7 @@ export default function CardView({
 				</Box>
 			)}
 
-			{open && (
+			{open ==='my-task'  ? (
 				<Dialog
 					TransitionComponent={Transition}
 					onClose={handleClose}
@@ -655,7 +658,12 @@ export default function CardView({
 						id={id}
 					/>
 				</Dialog>
-			)}
+			):(
+				open ==='self-task' && (
+					<CompletePopUp onClose={handleClose}	id={id as never} title="Task Review"
+					content="Are you sure you want to Complete the task?"/>
+			))
+			}
 			{openCancelPopup && (
 				<ConfrimPopUp
 					id={id as never}

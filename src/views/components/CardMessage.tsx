@@ -61,7 +61,7 @@ const CommentInput = ({ name = "comment", loading = false, taskView }: { name: s
             !statusArray.includes(taskView?.status?.name?.toLowerCase() || "")
         );
     };
-
+  
     return (
         <>
 
@@ -93,12 +93,17 @@ const CommentInput = ({ name = "comment", loading = false, taskView }: { name: s
                             />
                         </Box>
                     )}
-                    <Box>
+                    {
+                      taskView?.is_self_assign === 0 && (
+                        <Box>
                         <CustomCheckbox
                             name="send_private"
                             label="Send as Private"
                         />
                     </Box>
+                       )
+                    }
+                   
                 </Stack>
             </Box>
 
