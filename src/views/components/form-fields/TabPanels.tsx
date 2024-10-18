@@ -102,6 +102,7 @@ const TabPanels = ({
 
 	}
 	const handleClearAll=()=>{
+		setTitleValue([]);
 		setParams((prev) => ({
 			...prev,
 			task_category_id: [],
