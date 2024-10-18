@@ -1,5 +1,5 @@
 import { Box, Divider, Stack, Tab, Tabs, useMediaQuery, useTheme } from "@mui/material";
-import React, { Dispatch, ReactNode, SetStateAction, SyntheticEvent, useState } from "react";
+import  { Dispatch, ReactNode, SetStateAction, SyntheticEvent, useState } from "react";
 import SearchFilter from "../SearchFilter.tsx/SearchFilter";
 import ResponsiveSideBar from "../sidebar/ResponsiveSideBar";
 import ProgressBar from "../ProgressBar";
@@ -14,17 +14,8 @@ type TabListType = {
 	component: ReactNode | JSX.Element;
 };
 const TypeFilterView = (props:any)=>{
-	const {value,handleClearAll,handleRemoveItem,categories}=props
-	const formatLabel = (label: string) => {
-		return label
-		  .split('_') 
-		  .map(word => word.charAt(0).toUpperCase() + word.slice(1)) 
-		  .join(' '); 
-	  };
-	  const getCategoryNameById = (id: string) => {
-		const category = categories.find((category:any) => category.id === id);
-		return category ? category.name : "";
-	  };
+	const {value,handleClearAll,handleRemoveItem}=props
+	
 	return(
 		<Box sx={{"& .MuiDivider-root":{
 			width:'0px !important'
@@ -32,7 +23,7 @@ const TypeFilterView = (props:any)=>{
 		<Stack direction="row"
               spacing={1.5}  >
 			<Box>
-	       <Box sx={{borderRadius:'90px', border:'1px solid rgba(0, 0, 0, 1)',padding:'4px 10px 4px 10px',cursor:'pointer',width:'64px',height:'24px'}} onClick={handleClearAll}>
+	       <Box sx={{borderRadius:'90px', border:'1px solid rgba(0, 0, 0, 1)',padding:'4px 10px 4px 10px',cursor:'pointer',width:'64px',}} onClick={handleClearAll}>
 			<Typography variant="f12" fontWeight={fontWeightRegular} sx={{color:'rgba(0, 0, 0, 1)',whiteSpace:'nowrap',lineHeight:'16.2px',display:'flex',alignItems:'center',justifyContent:'center'}}>
 			Clear all
 			</Typography>
@@ -42,10 +33,10 @@ const TypeFilterView = (props:any)=>{
 		   <Box display={'flex'} flexWrap={'wrap'} gap={{md:'4px',xs:'10px'}}>
 		   {
 			value?.map((item:any)=>(
-				<Box  sx={{borderRadius:'90px', border:'1px solid rgba(136, 52, 76, 1)',padding:'4px 10px 4px 10px',flexWrap:'wrap',position:'relative',minWidth:'63px',height:'24px'}}>
+				<Box  sx={{borderRadius:'90px', border:'1px solid rgba(136, 52, 76, 1)',padding:'4px 10px 4px 10px',flexWrap:'wrap',position:'relative',minWidth:'63px',}}>
 				<Typography variant="f12" fontWeight={fontWeightRegular} sx={{color:'rgba(136, 52, 76, 1)',lineHeight:'16.2px',display:'flex',alignItems:'center',justifyContent:'center'}} > {item.title}</Typography> 
 				<Box sx={{position:'absolute',top: "-17px",
-									right: "3px",cursor:'pointer'}}  onClick={() => handleRemoveItem(item.value)}>
+									right: "-1px",cursor:'pointer'}}  onClick={() => handleRemoveItem(item.value)}>
 					<img src={typeCancelIcon} alt="cancel-icon" width={'12'} height={'12'}/>
 				</Box>
 			   </Box>
@@ -72,8 +63,10 @@ const TabPanels = ({
 }) => {
 	const theme = useTheme();
 	const media = useMediaQuery(theme.breakpoints.down("md"));
+	const [titleValue,setTitleValue]=useState([])
 	const handleChange = (e: SyntheticEvent, tab: TaskPagination["tab"]) => {
 		e.preventDefault();
+		setTitleValue([]);
 		setParams(() => ({
 			tab,
 			page:0,
@@ -85,18 +78,22 @@ const TabPanels = ({
 			task_category_id:[],
 		}));
 	};
-	const [titleValue,setTitleValue]=useState([])
+	
 	
 	const handleData=(pre:any)=>{
 		// setTitleValue(()=>(
 
 		// ))
-		const temp= titleValue.map((item)=> (item.value))
 		
+		
+		const temp= titleValue.map((item : any)=> (item.value))
 		const data= titleValue;
 		if(!temp.includes(pre.value)){
 			data.push(pre)
 		setTitleValue(data);	
+		}else{
+			const remove = data.filter((item: any) => item.value !== pre.value);
+			setTitleValue(remove)
 		}
 	
 

@@ -122,7 +122,7 @@ export default function MenuItemFilter({ params, setParams }: ParamsType) {
 				tab: state?.tab || 'my_task',
 				priority_id: [],
 				deadline: [],
-
+				task_category_id: state?.task_category_id || [],
 			}
 		})
 	};

@@ -173,7 +173,7 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 				disablePortal
 				sx={{
 					zIndex: 10, "& .MuiPaper-root": {
-						width: isXs ? '175px' : '175px',
+						width: isXs ? '175px' : '178px',
 						maxHeight:isXs ? '100px' : 'auto',
 						minHeight: '170px',
 						overflowY : 'auto',
