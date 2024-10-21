@@ -174,11 +174,11 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 				sx={{
 					zIndex: 10, "& .MuiPaper-root": {
 						width: isXs ? '175px' : '178px',
-						maxHeight:isXs ? '100px' : 'auto',
+						maxHeight:isXs ? '100px' : '195px',
 						minHeight: '170px',
 						overflowY : 'auto',
                         overflowX: 'hidden',
-						padding: '5px 0px 5px 13px',
+						padding: '5px 0px 5px 15px',
 						boxShadow: 'rgba(158, 158, 158, 0.2) 0px 5px 5px -3px, rgba(158, 158, 158, 0.14) 0px 8px 10px 1px, rgba(158, 158, 158, 0.12) 0px 3px 14px 2px;',
 						borderRadius: '6px'
 					}
@@ -231,9 +231,10 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 																			height: "12px",
 																			width: "12px"
 																		},
-																		marginTop: "3px",
+																		// marginTop: "3px",
 																		// width: "20px",
-																		height: "20px",
+																		minHeight: "20px",
+																		marginTop: { xs: '-14px', sm: '-1px' },
 																	}}
 
 																>
@@ -266,11 +267,12 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 																			// "& .MuiMenuItem": {
 																			// 	paddingLeft: "2px",
 																			// },
-																			marginTop: { xs: '-14px', sm: '-1px' },
+																			
 																			'&:hover': {
 																				backgroundColor: 'transparent',
 																			},
-                                                                            
+																			whiteSpace:'normal',
+                                                                            wordBreak:'break-all'
 																		}}
 																	>
 																		{dataValue.title}
