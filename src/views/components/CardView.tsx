@@ -167,9 +167,13 @@ export const StatusComponent = ({ task }: { task: TaskFormType; condition?: bool
 export default function CardView({
 	handleCloseDrawer,
 	viewTask,
+	setParams,
+	params,
 }: {
 	handleCloseDrawer: () => void;
 	viewTask?: TaskFormType;
+	params:any;
+	setParams: any;
 }) {
 	const { user } = userStore();
 	const theme = useTheme();
@@ -191,7 +195,7 @@ export default function CardView({
 	const label = getDueDateCategory(viewTask?.date as never);
 
 	const handleCheckState = () => {
-		return user?.id !== viewTask?.assigned_by;
+		return user?.id !== viewTask?.assigned_by || params.tab === 'my_task' && viewTask?.is_self_assign === 1;
 	};
 
 	const profileToShow: () => TaskFormType["assignedby"] = () => {
@@ -611,6 +615,7 @@ export default function CardView({
 					<CardMessage
 						taskView={viewTask as never}
 						isXs={isXs}
+						params={params}
 					/>
 				</Box>
 			)}

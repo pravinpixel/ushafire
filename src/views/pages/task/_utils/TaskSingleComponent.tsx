@@ -37,7 +37,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 	// 	return user?.id !== viewTask?.assigned_by;
 	// };
 	const checkAssignedTo = () => {
-		return user?.id !== task?.assigned_by;
+		return user?.id !== task?.assigned_by || params.tab === 'my_task' && task?.is_self_assign === 1;
 	};
 
 	const profileToShow: () => TaskFormType["assignedby"] = () => {

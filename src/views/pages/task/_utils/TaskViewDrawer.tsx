@@ -6,9 +6,11 @@ import { useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/material";
 import ProfileLogo from '../../../components/sidebar/ProfileLogo';
 import { cancel_Icon } from '../../../../utils/helpers/assetHelper';
+import { Dispatch, SetStateAction } from 'react';
 
 
-const TaskViewDrawer = ({ openDrawer, handleCloseDrawer }: { openDrawer: TaskFormType['id'], handleCloseDrawer: () => void }) => {
+const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { openDrawer: TaskFormType['id'], handleCloseDrawer: () => void ,params: TaskPagination,
+	setParams: Dispatch<SetStateAction<TaskPagination>>}) => {
 
 
     const { data , isLoading } = useTaskListView(openDrawer);
@@ -61,6 +63,8 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer }: { openDrawer: TaskFor
                                 <CardView
                                     handleCloseDrawer={handleCloseDrawer}
                                     viewTask={data?.data}
+                                    params={params}
+                                    setParams={ setParams}
                                 />
                             </>
                         ) : (

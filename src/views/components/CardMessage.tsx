@@ -8,7 +8,7 @@ import CustomCheckbox from "./form-fields/Checkbox";
 import UploadDocs from "./UploadDocs";
 import userStore from "../../zustand/UserZustand";
 
-const CommentInput = ({ name = "comment", loading = false, taskView }: { name: string; loading: boolean, taskView: TaskFormType }) => {
+const CommentInput = ({ name = "comment", loading = false, taskView,params }: { name: string; loading: boolean, taskView: TaskFormType ,params:any}) => {
     const { control } = useFormContext();
 
     const {
@@ -57,11 +57,12 @@ const CommentInput = ({ name = "comment", loading = false, taskView }: { name: s
     const user = userStore().user;
     const checkMyTask = () => {
         return (
-            user?.id === taskView?.assigned_to &&
-            !statusArray.includes(taskView?.status?.name?.toLowerCase() || "")
+            user?.id === taskView?.assigned_to  &&
+            !statusArray.includes(taskView?.status?.name?.toLowerCase() || "")  &&
+            !(params.tab === "assigned_task" && taskView?.is_self_assign === 1)
         );
     };
-  
+
     return (
         <>
 
@@ -202,7 +203,7 @@ const CommentInput = ({ name = "comment", loading = false, taskView }: { name: s
     );
 };
 
-export default function CardMessage({ taskView, isXs }: { taskView: TaskFormType, isXs: boolean }) {
+export default function CardMessage({ taskView, isXs ,params}: { taskView: TaskFormType, isXs: boolean,params:any }) {
     const { mutateAsync } = useSaveComment();
 
 
@@ -255,6 +256,7 @@ export default function CardMessage({ taskView, isXs }: { taskView: TaskFormType
                     name="comment"
                     loading={isSubmitting}
                     taskView={taskView}
+                    params={params}
                 />
 
             </Box>

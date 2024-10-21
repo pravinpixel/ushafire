@@ -236,7 +236,7 @@ const ListTask = React.memo(() => {
 		<Stack>
 			<TabPanels params={params} setParams={setParams} tabList={tabList} isLoading={isLoading && taskList.length === 0} />
 			{openDrawer && (
-				<TaskViewDrawer handleCloseDrawer={handleCloseDrawer} openDrawer={openDrawer} />
+				<TaskViewDrawer handleCloseDrawer={handleCloseDrawer} openDrawer={openDrawer} params={params} setParams={setParams}/>
 			)}
 		</Stack>
 	);
