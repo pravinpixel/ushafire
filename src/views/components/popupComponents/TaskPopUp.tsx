@@ -6,13 +6,17 @@ import { arrowLeft } from "../../../utils/helpers/assetHelper";
 import { fontWeightBold } from "../../../utils/theme/typography";
 import TaskForm from "../../pages/task/_utils/TaskForm";
 import Transition from "./Transition";
+import { DialogProps } from "@mui/material";
 
 
-const TaskPopUp = ({ id, onClose, handleTaskClose}: { id?: TaskFormType['id'] | null, onClose?: () => void, handleTaskClose?: () => void }) => {
+const TaskPopUp = ({ id, onClose, handleTaskClose }: { id?: TaskFormType['id'] | null, onClose?: () => void, handleTaskClose?: () => void }) => {
 	const [open, setOpen] = useState(id ? true : false);
 	const theme = useTheme();
 	const isXsScreen = useMediaQuery(theme.breakpoints.down("md"));
-	const handleClose = () => {
+	const handleClose: DialogProps['onClose'] = (_, reason) => {
+		if (reason && (reason === "backdropClick")) {
+			return
+		}
 		setOpen(false);
 		handleTaskClose && handleTaskClose()
 		onClose && onClose()
@@ -21,12 +25,12 @@ const TaskPopUp = ({ id, onClose, handleTaskClose}: { id?: TaskFormType['id'] | 
 
 	const { data } = useTaskListView(id)
 
-// 	const defaultValue = id
-//   ? data?.data 
-//   : {  
-// 	is_recurrence: 0 
-//     };
-const defaultValue =data?.data 
+	// 	const defaultValue = id
+	//   ? data?.data 
+	//   : {  
+	// 	is_recurrence: 0 
+	//     };
+	const defaultValue = data?.data
 
 	const handleOpen = (e: MouseEvent<HTMLLIElement, globalThis.MouseEvent> | MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
@@ -55,6 +59,7 @@ const defaultValue =data?.data
 					open={open}
 					maxWidth={"md"}
 					fullWidth
+
 					onClick={(e) => {
 						e.stopPropagation()
 					}}
@@ -65,6 +70,7 @@ const defaultValue =data?.data
 						}
 					}}
 					fullScreen={isXsScreen}
+
 				>
 					<Stack
 						direction={"row"}
@@ -73,7 +79,7 @@ const defaultValue =data?.data
 					>
 						<Box
 							sx={{ cursor: "pointer" }}
-							onClick={handleClose}
+							onClick={handleClose as never}
 						>
 							<img
 								alt="arrow-left"
@@ -95,7 +101,7 @@ const defaultValue =data?.data
 					</Stack>
 					<Divider sx={{ width: "100%", mt: 2 }} />
 					<TaskForm
-						handleClose={handleClose}
+						handleClose={handleClose as never}
 						defaultValues={defaultValue}
 						key={defaultValue?.id}
 					/>

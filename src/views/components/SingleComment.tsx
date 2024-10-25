@@ -7,13 +7,14 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import UploadDocs from "./UploadDocs";
 import userStore from "../../zustand/UserZustand";
+import LinkComponent from "./popupComponents/LinkComponent";
 dayjs.extend(RelativeTime);
 dayjs.extend(utc)
 dayjs.extend(timezone)
-const getTimeZone = dayjs.tz.guess() 
-const SingleComment = ({ comment , taskView}: { comment: TaskComment; taskView?: TaskFormType }) => {
+const getTimeZone = dayjs.tz.guess()
+const SingleComment = ({ comment, taskView }: { comment: TaskComment; taskView?: TaskFormType }) => {
 	const user = userStore().user;
-	
+
 
 	const checkTime = dayjs.tz(comment?.created_at, getTimeZone)
 	const fromNow = dayjs.tz(taskView?.current_date, getTimeZone)
@@ -71,7 +72,8 @@ const SingleComment = ({ comment , taskView}: { comment: TaskComment; taskView?:
 					variant="f12"
 					sx={{ fontWeight: fontWeightRegular, lineHeight: "16.2px" }}
 				>
-					{comment?.comment}
+					<LinkComponent text={comment?.comment} />
+
 				</Typography>
 			</Box>
 		</>

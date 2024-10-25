@@ -3,6 +3,7 @@ type ReactComponentType = {
 };
 
 type PaginationType = {
+	tab: string;
 	page?: number;
 	per_page: number;
 	search?: string | null;

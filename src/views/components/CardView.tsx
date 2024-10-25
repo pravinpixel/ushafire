@@ -12,6 +12,7 @@ import {
 	useTheme,
 } from "@mui/material";
 import { useState } from "react";
+
 import { useCloseTask } from "../../store/hooks/taskHooks";
 import { calenderTask, cancel_Icon, clockIcon, close, deleteIcon, mark, tick } from "../../utils/helpers/assetHelper";
 import { statusArray } from "../../utils/helpers/globalHelper";
@@ -29,6 +30,10 @@ import Transition from "./popupComponents/Transition";
 import UploadDocs from "./UploadDocs";
 import MarkButton from "./MarkButton";
 import CompletePopUp from "./popupComponents/CompletePopUp";
+import LinkComponent from "./popupComponents/LinkComponent";
+
+type TaskPopUpType = "my-task" | 'self-task'
+
 
 const statusIcon = (status?: EssentailStatus["name"]) => {
 	switch (status) {
@@ -80,19 +85,19 @@ const statusIcon = (status?: EssentailStatus["name"]) => {
 	}
 };
 
-const StatusBorder=(taskStatus :string)=>{
-	switch(taskStatus ){
+const StatusBorder = (taskStatus: string) => {
+	switch (taskStatus) {
 		case "completed":
 			return "3px solid rgba(42, 206, 58, 1)";
-			case "closed":
-				return "3px solid rgba(204, 204, 204, 1)";
-				case "deleted":
-					return "3px solid rgba(153, 153, 153, 1)";
-					default:
-						return ""
-						
-					}
+		case "closed":
+			return "3px solid rgba(204, 204, 204, 1)";
+		case "deleted":
+			return "3px solid rgba(153, 153, 153, 1)";
+		default:
+			return ""
+
 	}
+}
 
 
 export const StatusComponent = ({ task }: { task: TaskFormType; condition?: boolean }) => {
@@ -164,25 +169,24 @@ export const StatusComponent = ({ task }: { task: TaskFormType; condition?: bool
 	);
 };
 
+
 export default function CardView({
 	handleCloseDrawer,
 	viewTask,
-	setParams,
 	params,
 }: {
 	handleCloseDrawer: () => void;
 	viewTask?: TaskFormType;
-	params:any;
-	setParams: any;
+	params: PaginationType;
 }) {
 	const { user } = userStore();
 	const theme = useTheme();
 	const isXs = useMediaQuery(theme.breakpoints.down("sm"));
-	const [open, setOpen] = useState(null);
+	const [open, setOpen] = useState<TaskPopUpType | null>(null);
 	const [openCancelPopup, setOpenCancelPopup] = useState(false);
 	const id = viewTask?.id || null;
 	const taskStatus = viewTask?.status?.name || "";
-	
+
 	const handleClose = () => {
 		setOpen(null);
 	};
@@ -195,7 +199,7 @@ export default function CardView({
 	const label = getDueDateCategory(viewTask?.date as never);
 
 	const handleCheckState = () => {
-		return user?.id !== viewTask?.assigned_by || params.tab === 'my_task' && viewTask?.is_self_assign === 1;
+		return user?.id !== viewTask?.assigned_by || params?.tab === 'my_task' && viewTask?.is_self_assign === 1;
 	};
 
 	const profileToShow: () => TaskFormType["assignedby"] = () => {
@@ -219,7 +223,7 @@ export default function CardView({
 	// 	? "Completed"
 	// 	: "";
 
-	const handleCompleteTask = (val:any) => {
+	const handleCompleteTask = (val: "my-task" | 'self-task') => {
 		setOpen(val);
 	};
 	const { mutateAsync } = useCloseTask();
@@ -259,9 +263,9 @@ export default function CardView({
 							paddingBottom: "40px",
 							paddingTop: "30px",
 							borderBottom: StatusBorder(taskStatus.toLowerCase())
-								// taskStatus.toLowerCase() === "completed"
-								// 	? `3px solid rgba(42, 206, 58, 1)`
-								// 	: "",
+							// taskStatus.toLowerCase() === "completed"
+							// 	? `3px solid rgba(42, 206, 58, 1)`
+							// 	: "",
 						}}
 					>
 						{
@@ -292,7 +296,7 @@ export default function CardView({
 											"& .MuiBadge-dot": {
 												background: ({ palette }) =>
 													customizeColor(
-														viewTask?.priority?.name,
+														viewTask?.priority?.name as string,
 														palette
 													),
 												width: "12px",
@@ -372,7 +376,7 @@ export default function CardView({
 											fontWeight: fontWeightRegular,
 										}}
 									>
-										<DateFormatter date={viewTask?.created_at} />
+										<DateFormatter date={viewTask?.created_at as never} />
 									</Typography>
 								</Box>
 							</Stack>
@@ -385,7 +389,7 @@ export default function CardView({
 								order={isXs ? 2 : 1}
 							>
 								<DayState
-									date={viewTask?.deadline}
+									date={viewTask?.deadline as never}
 									color={
 										statusArray?.includes(viewTask?.status?.name || "")
 											? "rgba(83, 83, 83, 1)"
@@ -414,9 +418,14 @@ export default function CardView({
 									opacity: "70%",
 									fontWeight: fontWeightRegular,
 									lineHeight: "18px",
+									'a': {
+										textDecoration: "underline",
+										color: ({ palette }) => palette.primary.main
+									}
 								}}
 							>
-								{viewTask?.description}
+
+								<LinkComponent text={viewTask?.description} />
 							</Typography>
 						</Stack>
 						<Box
@@ -524,7 +533,7 @@ export default function CardView({
 									// 	}}
 									// />
 									<Box marginTop={1.8} marginRight={3.5}>
-									<MarkButton label='Marked as completed' />
+										<MarkButton label='Marked as completed' />
 									</Box>
 								) : (
 									<StatusComponent
@@ -539,7 +548,7 @@ export default function CardView({
 										loading={false}
 										label="Complete the task"
 										type="submit"
-										onClick={()=>handleCompleteTask( viewTask?.is_self_assign === 0 ? 'my-task' : 'self-task')}
+										onClick={() => handleCompleteTask(viewTask?.is_self_assign === 0 ? 'my-task' : 'self-task')}
 										startIcon={
 											<img
 												src={mark}
@@ -620,11 +629,11 @@ export default function CardView({
 				</Box>
 			)}
 
-			{open ==='my-task'  ? (
+			{open === 'my-task' ? (
 				<Dialog
 					TransitionComponent={Transition}
 					onClose={handleClose}
-					open={open}
+					open={!!open}
 					maxWidth={"sm"}
 					fullWidth
 					fullScreen={isXs}
@@ -663,11 +672,11 @@ export default function CardView({
 						id={id}
 					/>
 				</Dialog>
-			):(
-				open ==='self-task' && (
-					<CompletePopUp onClose={handleClose}	id={id as never} title="Task Review"
-					content="Are you sure you want to Complete the task?"/>
-			))
+			) : (
+				open === 'self-task' && (
+					<CompletePopUp onClose={handleClose} id={id as never} title="Task Review"
+						content="Are you sure you want to Complete the task?" />
+				))
 			}
 			{openCancelPopup && (
 				<ConfrimPopUp

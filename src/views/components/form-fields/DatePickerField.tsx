@@ -33,9 +33,9 @@ const DatePickerField = (props: DatePickerFieldType) => {
 		setOpen(false);
 	};
 	const toggleDatePicker = () => {
-		setOpen((prevOpen) => !prevOpen); 
-	  };
-	
+		setOpen((prevOpen) => !prevOpen);
+	};
+
 	const checkDate = (dates?: Date | string) => {
 		return dayjs(dates).isValid() && dates;
 	};
@@ -56,11 +56,11 @@ const DatePickerField = (props: DatePickerFieldType) => {
 					components={["DatePicker"]}
 					sx={{
 						paddingTop: "0px",
-						
+
 					}}
 				>
 					<ClickAwayListener onClickAway={handleClick} mouseEvent="onMouseDown">
-						<Box sx={{ my: 2, display: "flex", flexDirection: "column", width: "100%"}}>
+						<Box sx={{ my: 2, display: "flex", flexDirection: "column", width: "100%" }}>
 							<FormLabel sx={{ mb: 1 }}>{label}</FormLabel>
 							<DatePicker
 								label=""
@@ -94,15 +94,15 @@ const DatePickerField = (props: DatePickerFieldType) => {
 										InputProps: {
 											endAdornment: (
 												<InputAdornment position="end">
-												<IconButton
-												  onClick={toggleDatePicker} 
-												  edge="end"
-												>
-												  <CalenderTask />
-												</IconButton>
-											  </InputAdornment>
+													<IconButton
+														onClick={toggleDatePicker}
+														edge="end"
+													>
+														<CalenderTask />
+													</IconButton>
+												</InputAdornment>
 											),
-										  },
+										},
 									},
 									popper: {
 										placement: 'top-start',
@@ -113,8 +113,8 @@ const DatePickerField = (props: DatePickerFieldType) => {
 								// 	openPickerIcon: CalenderTask
 								// }}
 								sx={{
-									'& .MuiIconButton-root:hover':{
-										background : "#f2dde3 !important"
+									'& .MuiIconButton-root:hover': {
+										background: "#f2dde3 !important"
 									}
 								}}
 							// {...pickerProps}

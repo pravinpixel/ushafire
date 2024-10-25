@@ -14,13 +14,14 @@ import DateFormatter from "../../../components/DateFormat";
 import DayState from "../../../components/DayState";
 import MarkButton from "../../../components/MarkButton";
 import TaskOptionsMenu from "./TaskOptionsMenu";
+import LinkComponent from "../../../components/popupComponents/LinkComponent";
 // import UploadDocs from "../../../components/UploadDocs";
 
 type Props = {
 	task: TaskFormType;
 	params: TaskPagination;
 	current_date: Date;
-	setOpenDrawer: any;
+	setOpenDrawer: (id: string) => void;
 };
 
 const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDrawer }: Props) => {
@@ -30,7 +31,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 	const handleOpenDrawer = (e: MouseEvent<HTMLDivElement>, id?: string) => {
 		e.preventDefault;
 		e.stopPropagation();
-		setOpenDrawer(id);
+		setOpenDrawer(id as string);
 	};
 
 	// const handleCheckState = () => {
@@ -82,7 +83,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 									width: "12px",
 									height: "12px",
 									background: ({ palette }) =>
-										customizeColor(task?.priority?.name, palette),
+										customizeColor(task?.priority?.name as string, palette),
 									borderRadius: "50%"
 								},
 							}}
@@ -96,10 +97,10 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 							{task?.priority?.name}
 						</Typography>
 						{
-							task?.is_recurrence === 1 &&(
-                             <Box sx={{maxWidth:'38px',height:'24px',borderRadius:'40px',padding:'4px 11px 4px 11px',border:'1px solid rgba(226, 226, 226, 1)',background:'white',display:'flex',justifyContent:'center',alignItems:'center'}}>
-                              <img src={ReccurenceIcon} width={11} height={11} alt="reccurence icon"/>
-							 </Box>
+							task?.is_recurrence === 1 && (
+								<Box sx={{ maxWidth: '38px', height: '24px', borderRadius: '40px', padding: '4px 11px 4px 11px', border: '1px solid rgba(226, 226, 226, 1)', background: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+									<img src={ReccurenceIcon} width={11} height={11} alt="reccurence icon" />
+								</Box>
 							)
 						}
 					</Stack>
@@ -152,7 +153,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						order={isXs ? 2 : 1}
 					>
 						<DayState
-							date={task?.deadline}
+							date={task?.deadline as never}
 							color={
 								statusArray?.includes(task?.status?.name?.toLowerCase() || "")
 									? "rgba(83, 83, 83, 1)"
@@ -257,7 +258,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						lineHeight={"21.6px"}
 						display={{ xs: "none", sm: "block" }}
 					>
-						{task?.description}
+						<LinkComponent text={task?.description} />
 					</Typography>
 					{task?.mark_as_completed && task?.status?.name?.toLowerCase() === "inprogress" ? (
 						<Box marginTop={"26px"}>
