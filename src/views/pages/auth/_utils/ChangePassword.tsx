@@ -76,6 +76,7 @@ const ChangePassword = () => {
 				justifyContent="center"
 				sx={{ width: { xs: "100%", md: "auto" } }}
 				mt={{ xs: 4,md:8.75 }}
+				mb={{xs:8,md:'auto'}}
 			>
 				<CustomButton
 					sx={{ width: { xs: "100%", md: "auto" } }}

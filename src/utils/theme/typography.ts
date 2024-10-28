@@ -50,7 +50,7 @@ const fontSizeList: TypographyOptions['fontSizeList'] = {
 	f12: 12,
 	f14: 14,
 	f16: 16,
-	f18: 16,
+	f18: 18,
 	f20: 20,
 	f23: 23,
 	f24: 22,

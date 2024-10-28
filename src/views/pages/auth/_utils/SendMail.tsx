@@ -64,7 +64,8 @@ function SendMail() {
 				display="flex"
 				justifyContent="center"
 				sx={{ width: { xs: "100%", md: "auto" } }}
-				mt={{ xs: 4, md:17.75 }}
+				mt={{ xs: 6, md:17.75 }}
+				mb={{xs:8,md:'auto'}}
 			>
 				<CustomButton
 					sx={{ width: { xs: "100%", md: "auto" } }}

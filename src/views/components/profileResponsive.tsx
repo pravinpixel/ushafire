@@ -14,6 +14,9 @@ import { Divider } from "@mui/material";
 import ChangePassword from "./popupComponents/ChangePassword";
 import { useTheme } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
+import { notify } from "../../utils/helpers/globalHelper";
+import { useNavigate } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
 
 const SmallAvatar = styled(Avatar)(() => ({
   width: '24px',
@@ -60,8 +63,17 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
 	const handleOpen = () => {
 		setOpen(true);
 	};
+  const navigate = useNavigate();
   const { mutateAsync, isLoading } = useLogoutApi()
-
+  const handleLogout = async () => {
+		try {
+			const response = await mutateAsync();
+			notify(response);
+			navigate("/auth/login");
+		} catch (error) {
+			notify(error);
+		}
+	};
   return (
     <>
       <Box
@@ -115,11 +127,26 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
         </Stack>
         <Stack marginTop={15}>
           <CustomButton
-            loading={isLoading}
-            label="Log out"
+            // loading={isLoading}
+            label= {isLoading ? "" : "Log out"}
+            type="submit"
             fullWidth
-            onClick={() => mutateAsync()}
-            startIcon={<img src={logout1} alt="logout" width="18" height="18" />}
+            onClick={() => handleLogout()}
+            // startIcon={<img src={logout1} alt="logout" width="18" height="18" />}
+            startIcon={
+              <>
+                {isLoading ? (
+                  <CircularProgress  size={'20px'} />
+                ) : (
+                  <img
+                    src={logout1}
+                    alt="logout"
+                    width="18"
+                    height="18"
+                  />
+                )}
+              </>
+            }
           />
         </Stack>
 

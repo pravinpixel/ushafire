@@ -67,6 +67,11 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						direction={"row"}
 						alignItems={"center"}
 						gap={isXs ? "0px" : "8px"}
+						sx={{'& .MuiChip-root':{
+							'@media (max-width: 375px)': {
+							padding:'0px'
+							  }
+						}}}
 					>
 						{task?.status?.name === "inprogress" && (
 							<Chip {...getDueStatus(task?.deadline, current_date)} />

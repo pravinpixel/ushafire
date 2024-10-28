@@ -5,6 +5,7 @@ import { ReactRRuleWidget } from "react-rrule-widget";
 
 const StyledBox = styled(Box)(() => ({
 	zIndex: 2,
+	whiteSpace:'nowrap',
 	"& button": {
 		"&:hover": {
 			background: "unset",
