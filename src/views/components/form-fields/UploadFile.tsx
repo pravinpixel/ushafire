@@ -118,6 +118,7 @@ const UploadFile = (props: uploadDocType) => {
 					ref={ref}
 					accept={uploadAccecpt}
 					onChange={handleFileChange}
+					key={Math.random()}
 				/>
 				{
 					error && <FormHelperText error={!!error?.message}>{error?.message}</FormHelperText>

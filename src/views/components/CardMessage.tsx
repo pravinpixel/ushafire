@@ -136,13 +136,15 @@ const CommentInput = ({ name = "comment", loading = false, taskView,params }: { 
                             <input
                                 type="file"
                                 multiple
-                                key={String(field)}
+                                key={Math.random()}
+                                // key={String(field)}
                                 // {...documentField}
                                 // {...documentField}
                                 ref={ref}
                                 accept={uploadAccecpt}
                                 hidden
                                 onChange={handleUpload}
+                                
                             />
                             <img
                                 src={uploadIcon}
@@ -162,7 +164,6 @@ const CommentInput = ({ name = "comment", loading = false, taskView,params }: { 
                     {...field}
                     // onChange={handleTextChange}
                     fullWidth
-
                     size="small"
                     placeholder={"Type message"}
                     error={!!error?.message}
