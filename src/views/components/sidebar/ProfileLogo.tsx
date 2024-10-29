@@ -17,7 +17,7 @@ const ProfileLogo = ({ onClick, show = true }: { onClick: () => void,show?:boole
         <Stack >
             <Typography variant="f20" color={"#88344C"} sx={{ fontWeight: fontWeightBold }}>Hi {user?.first_name} {user?.last_name}!</Typography>
             <RatingSidebar value={user?.rating_count || 0} />
-            <Typography variant="f18" color={'#05050580'} sx={{ fontWeight: fontWeightRegular }}>{"It's time to mark those tasks as complete!"}</Typography>
+            <Typography variant="f16" color={'#05050580'} sx={{ fontWeight: fontWeightRegular,lineHeight:'20px' }}>{"It's time to mark those tasks as complete!"}</Typography>
 
         </Stack>
     </Stack> : null

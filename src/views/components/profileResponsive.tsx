@@ -104,9 +104,9 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
         <Badge
           overlap="circular"
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          badgeContent={
-            <SmallAvatar alt="Remy Sharp" src={avatarImage} />
-          }
+          // badgeContent={
+          //   <SmallAvatar alt="Remy Sharp" src={avatarImage} />
+          // }
         >
           <LargeAvatar alt="Travis Howard" src={profileView?.profile_image} />
         </Badge>
@@ -121,8 +121,8 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
           <UserSection profileView={profileView} />
         </Stack>
         <Stack mt={2}>
-        <Box onClick={handleOpen} mt={1}>
-				<Typography variant="f16"  sx={{textDecoration:'underline',cursor:'pointer',color:'#050505',fontWeight: fontWeightMedium}} lineHeight={'20px'} >Change password</Typography>
+        <Box onClick={handleOpen} sx={{display:'flex',justifyContent:'end'}} mt={1}>
+				<Typography variant="f16"  sx={{textDecoration:'underline',cursor:'pointer',color:'#050505',fontWeight: fontWeightMedium,textAlign:'end'}} lineHeight={'20px'} >Change password</Typography>
 			</Box>
         </Stack>
         <Stack marginTop={15}>

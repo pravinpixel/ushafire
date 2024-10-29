@@ -32,7 +32,9 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 	}, [data, setUser, viewUserData]);
 
 	return (
-		<Box sx={{ display: "flex", position: "relative", height: "100%" }}>
+		<Box sx={{ display: "flex", position: "relative", height: "100%" , overflow: "hidden", 
+			'& ::-webkit-scrollbar': { width: 0, background: 'transparent' },
+			'&': { scrollbarWidth: 'none' }}}>
 			<Box sx={{
 				margin: NAV.CHILDMARGIN + "px",
 				display: "flex",

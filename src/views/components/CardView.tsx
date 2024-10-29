@@ -550,7 +550,7 @@ export default function CardView({
 							{showAllButtons && (
 								<>{
 									isXs ? (
-										<Stack  direction={{ xs: 'row'}} spacing={1}  sx={{ width: '100%' }} >
+										<Stack  direction={{ xs: 'row'}} spacing={1.5}  sx={{ width: '100%' }} >
 									<CustomButton
 										loading={false}
 										label="Complete the task"
@@ -694,7 +694,7 @@ export default function CardView({
 					open={!!open}
 					maxWidth={"sm"}
 					fullWidth
-					fullScreen={isXs}
+					// fullScreen={isXs}
 					sx={{
 						" & .MuiDialog-paper": {
 							padding: '32px'

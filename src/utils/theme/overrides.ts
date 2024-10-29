@@ -148,6 +148,7 @@ export function overrides(theme: Theme): ComponentsOverride {
 					[theme.breakpoints.down("sm")]: {
 						padding: "13px 13px",
 					},
+					scrollbarWidth:'none'
 				},
 			},
 			variants: [
@@ -249,6 +250,7 @@ export function overrides(theme: Theme): ComponentsOverride {
 				},
 			},
 		},
+		
 		// MuiDrawer:{
 		// 	styleOverrides: {
 		// 		root: {
