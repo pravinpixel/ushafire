@@ -388,6 +388,7 @@ export default function CardView({
 								alignItems={"center"}
 								order={isXs ? 2 : 1}
 							>
+								<Box display={{ xs: "none", sm: "block" }}>
 								<DayState
 									date={viewTask?.deadline as never}
 									color={
@@ -396,6 +397,7 @@ export default function CardView({
 											: "rgba(136, 52, 76, 1)"
 									}
 								/>
+								</Box>
 								<Typography
 									color={"#050505"}
 									variant="f16"
@@ -408,7 +410,7 @@ export default function CardView({
 						</Stack>
 						<Stack
 							direction={"row"}
-							display={{ xs: "none", sm: "block" }}
+							display={"block"}
 							marginTop={2}
 						>
 							<Typography
