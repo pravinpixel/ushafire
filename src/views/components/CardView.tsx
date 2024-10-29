@@ -676,7 +676,7 @@ export default function CardView({
 						position: "fixed",
 						bottom: 0,
 						width: isXs ? "100vw" : "50vw",
-						borderRadius: "17px 0px 0px 17px",
+						borderRadius: isXs ?"0px": "17px 0px 0px 17px",
 					}}
 				>
 					<CardMessage

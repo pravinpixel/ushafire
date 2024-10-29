@@ -39,7 +39,7 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                         "& .MuiBackdrop-root": {
                             // backgroundColor: "transparent",
                             '@media (max-width: 599px)': {
-                                backgroundColor: "transparent",
+                                backgroundColor: "white",
 							  }
                         },
                     }}
