@@ -120,45 +120,50 @@ const CommentInput = ({ name = "comment", loading = false, taskView,params }: { 
                 <Box
                     paddingRight={{ xs: 1, md: 2 }}
                 >
-                    <IconButton
-                        component="span"
-                        sx={{
-                            background: "none",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                        }}
-                        onClick={() => {
-                            ref?.current?.click();
-                        }}
-                    >
-                        <label htmlFor="file-input">
-                            <input
-                                type="file"
-                                multiple
-                                key={Math.random()}
-                                // key={String(field)}
-                                // {...documentField}
-                                // {...documentField}
-                                ref={ref}
-                                accept={uploadAccecpt}
-                                hidden
-                                onChange={handleUpload}
-                                
-                            />
-                            <img
-                                src={uploadIcon}
-                                width={20}
-                                height={20}
-                                alt="upload"
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                }}
-                            />
-                        </label>
-                    </IconButton>
+                    {
+                        files?.length < 5 &&(
+                            <IconButton
+                            component="span"
+                            sx={{
+                                background: "none",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                            }}
+                            onClick={() => {
+                                ref?.current?.click();
+                            }}
+                        >
+                            <label htmlFor="file-input">
+                                <input
+                                    type="file"
+                                    multiple
+                                    key={Math.random()}
+                                    // key={String(field)}
+                                    // {...documentField}
+                                    // {...documentField}
+                                    ref={ref}
+                                    accept={uploadAccecpt}
+                                    hidden
+                                    onChange={handleUpload}
+                                    
+                                />
+                                <img
+                                    src={uploadIcon}
+                                    width={20}
+                                    height={20}
+                                    alt="upload"
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                    }}
+                                />
+                            </label>
+                        </IconButton>
+                        )
+                    }
+                   
                 </Box>
                 <TextField
                     {...field}

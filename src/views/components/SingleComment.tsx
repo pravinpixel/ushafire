@@ -60,7 +60,7 @@ const SingleComment = ({ comment, taskView }: { comment: TaskComment; taskView?:
 					</Typography>
 				</Stack>
 			</Stack>
-			<Stack direction={"row"} gap={2}>
+			<Stack direction={"row"} flexWrap={'wrap'} gap={2}>
 				{comment?.documents?.length > 0
 					? comment.documents?.map((doc) => <UploadDocs document={doc} />)
 					: null}

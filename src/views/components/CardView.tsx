@@ -548,8 +548,57 @@ export default function CardView({
 								)}
 
 							{showAllButtons && (
-								<>
+								<>{
+									isXs ? (
+										<Stack  direction={{ xs: 'row'}} spacing={1}  sx={{ width: '100%' }} >
 									<CustomButton
+										loading={false}
+										label="Complete the task"
+										type="submit"
+										onClick={() => handleCompleteTask(viewTask?.is_self_assign === 0 ? 'my-task' : 'self-task')}
+										startIcon={
+											<img
+												src={mark}
+												alt="logout"
+												width={14}
+												height={14}
+											/>
+										}
+										sx={{
+											width: { xs: 'calc(60% - 6px)'},
+											padding: 0.6,
+										}}
+									/>
+									<CustomButton
+										onClick={handleCloseTask}
+										loading={false}
+										label="Close the task"
+										type="submit"
+										startIcon={
+											<img
+												src={close}
+												alt="logout"
+												width={12}
+												height={12}
+											/>
+										}
+										sx={{
+											color: "#373737",
+											backgroundColor: "#FFFFFF",
+											border: "1px solid #5E576C",
+											width: { xs: 'calc(50% - 6px)'},
+											padding: 0.6,
+											"&:hover": {
+												color: "#373737",
+												backgroundColor: "#FFFFFF",
+												border: "1px solid #5E576C",
+											},
+										}}
+									/>
+								</Stack>
+									):(
+										<>
+										<CustomButton
 										loading={false}
 										label="Complete the task"
 										type="submit"
@@ -593,6 +642,10 @@ export default function CardView({
 											},
 										}}
 									/>
+										</>
+									)
+								}
+									
 								</>
 							)}
 						</Stack>
