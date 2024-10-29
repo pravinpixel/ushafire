@@ -227,7 +227,7 @@ export default function CardView({
 		setOpen(val);
 	};
 	const { mutateAsync } = useCloseTask();
-
+	
 	return (
 		<>
 			<Box
@@ -441,8 +441,11 @@ export default function CardView({
 								/>
 							))}
 						</Box>
-
-						<Divider sx={{ width: "100%", marginTop: 2, marginBottom: 2 }} />
+                        
+						{/* <Divider sx={{ width: "100%", marginTop: 2, marginBottom: 2 }} /> */}
+						{!isXs || params?.tab !== 'my_task' ? (
+                          <Divider sx={{ width: "100%", marginTop: 2, marginBottom: 2 }} />
+                           ) : null}
 
 						<Stack
 							direction="row"
@@ -450,7 +453,7 @@ export default function CardView({
 							flexWrap="wrap"
 							gap={'24px'}
 							marginTop={2}
-							marginLeft={2}
+							marginLeft={{sm:2,xs:0}}
 							sx={{
 								whiteSpace: "nowrap",
 								fontSize: ({ typography }) => typography.fontSizeList.f14,
