@@ -31,7 +31,10 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                             borderRadius: "17px 0px 0px 17px",
                             padding: 0,
                             boxShadow: "1",
-                            scrollbarWidth:'none'
+                            scrollbarWidth:'none',
+                            '@media (max-width: 599px)': {
+                                borderRadius: "0px",
+							  }
                         },
                         "& .MuiBackdrop-root": {
                             // backgroundColor: "transparent",
