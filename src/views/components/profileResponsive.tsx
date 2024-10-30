@@ -33,9 +33,15 @@ const LargeAvatar = styled(Avatar)(() => ({
 }));
 
 const UserTableContent = ({ label, value }: { label: string, value?: string }) => {
-  return <Stack direction={'row'} justifyContent="space-between" >
-    <Typography variant="f12" sx={{ fontWeight: fontWeightMedium }} color="#050505">{label}</Typography>
-    <Typography variant="f16" sx={{ fontWeight: fontWeightBold ,width:"65%",textAlign:"end" }} color="#000000">{value}</Typography>
+  return <Stack direction={'row'} justifyContent="space-between" mb={3} sx={{
+    "& .MuiTypography-root":{
+      overflow:'visible !important',
+      wordBreak:'break-word',
+      display:'block',
+    }
+  }} >
+    <Typography variant="f12" sx={{ fontWeight: fontWeightBold,lineHeight:'20px' }} color="rgba(5, 5, 5, 0.5)">{label}</Typography>
+    <Typography variant="f16" sx={{ fontWeight: fontWeightBold,width:"65%",textAlign:"end",lineHeight:'20px'}} color="rgba(0, 0, 0, 1)">{value}</Typography>
   </Stack>
 }
 
@@ -76,6 +82,7 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
 	};
   return (
     <>
+    
       <Box
         sx={{
           backgroundColor: "#88344C",
@@ -88,19 +95,21 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
           position: 'relative',
         }}
       >
+        <Container>
         <Stack
           direction="row"
           spacing={1}
           alignItems="center"
           marginBottom={2}
           marginTop="12px"
+          margin={'16px'}
         >
           <img src={arrow} alt="arrow" width="20" height="5" onClick={handleClose} />
           <Typography variant="f20" sx={{ fontWeight: fontWeightBold }}>
             User profile
           </Typography>
         </Stack>
-
+        </Container>
         <Badge
           overlap="circular"
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -113,15 +122,16 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
 
       </Box>
       <Container>
+        <Box paddingX={'20px'}>
         <Stack marginTop={8}>
-          <Stack direction={'row'} justifyContent={'space-between'}>
-            <Typography variant="f12" sx={{ fontWeight: fontWeightMedium }} color="#050505">Rating</Typography>
+          <Stack direction={'row'} justifyContent={'space-between'} mb={3} mt={2}>
+            <Typography variant="f12" sx={{ fontWeight: fontWeightBold ,lineHeight:'20px'}} color="rgba(5, 5, 5, 0.5)">Rating</Typography>
             <RatingSidebar value={profileView?.rating_count} />
           </Stack>
           <UserSection profileView={profileView} />
         </Stack>
         <Stack mt={2}>
-        <Box onClick={handleOpen} sx={{display:'flex',justifyContent:'end'}} mt={1}>
+        <Box onClick={handleOpen} sx={{display:'flex',justifyContent:'end'}} >
 				<Typography variant="f16"  sx={{textDecoration:'underline',cursor:'pointer',color:'#050505',fontWeight: fontWeightMedium,textAlign:'end'}} lineHeight={'20px'} >Change password</Typography>
 			</Box>
         </Stack>
@@ -149,7 +159,7 @@ const ProfileResponsive = (props: { handleClose: () => void }) => {
             }
           />
         </Stack>
-
+        </Box>
         
 			{open && (
 				<Dialog
