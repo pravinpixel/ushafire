@@ -4,7 +4,7 @@ import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 import { useLogoutApi } from "../../../store/hooks/authHooks";
 import { NAV } from "../../../utils/constants";
-import { logout, task_logo } from "../../../utils/helpers/assetHelper";
+import {  task_logo } from "../../../utils/helpers/assetHelper";
 import { notify } from "../../../utils/helpers/globalHelper";
 import userStore from "../../../zustand/UserZustand";
 import CustomButton from "../../components/Button";
@@ -18,6 +18,7 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { fontWeightBold } from "../../../utils/theme/typography";
 import ChangePassword from "../../components/popupComponents/ChangePassword";
+import { Logout } from "../../../utils/theme/svg";
 
 
 const UserTableContent = ({ name, id }: { name?: string, id?: string | number }) => {
@@ -207,12 +208,13 @@ const Sidebar = ({ show }: { show: boolean }) => {
 							{isLoading ? (
 								<CircularProgress sx={{ color: "#88344C" }} size={'20px'} />
 							) : (
-								<img
-									src={logout}
-									alt="logout"
-									width="18"
-									height="18"
-								/>
+								// <img
+								// 	src={logout}
+								// 	alt="logout"
+								// 	width="18"
+								// 	height="18"
+								// />
+								<Logout/>
 							)}
 						</>
 					}

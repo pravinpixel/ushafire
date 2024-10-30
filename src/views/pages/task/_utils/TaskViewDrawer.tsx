@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material";
 import ProfileLogo from '../../../components/sidebar/ProfileLogo';
 import { cancel_Icon } from '../../../../utils/helpers/assetHelper';
 import { Dispatch, SetStateAction } from 'react';
+import { CancelIcons } from '../../../../utils/theme/svg';
 
 
 const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { openDrawer: TaskFormType['id'], handleCloseDrawer: () => void ,params: TaskPagination,
@@ -55,15 +56,18 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                                 {cardWidth &&
                                     <Box padding={2}>
                             
-                                            <img
+                                            {/* <img
                                                 src={cancel_Icon}
                                                 alt="arrow"
                                                 width="10"
                                                 height="10"
                                                 onClick={handleCloseDrawer}
                                                 style={{ cursor: "pointer", marginLeft: "15px" }}
-                                            />
-
+                                            /> */}
+                                              <Box component={'div'} onClick={handleCloseDrawer}
+                                                style={{ cursor: "pointer", marginLeft: "15px" }}>
+                                               <CancelIcons />
+                                              </Box>
                                       
                                         <ProfileLogo onClick={() => { }} />
                                     </Box>}

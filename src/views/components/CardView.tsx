@@ -31,6 +31,7 @@ import UploadDocs from "./UploadDocs";
 import MarkButton from "./MarkButton";
 import CompletePopUp from "./popupComponents/CompletePopUp";
 import LinkComponent from "./popupComponents/LinkComponent";
+import { CancelIcons, TaskTimeIcons } from "../../utils/theme/svg";
 
 type TaskPopUpType = "my-task" | 'self-task'
 
@@ -243,14 +244,18 @@ export default function CardView({
 				{isXs ? (
 					""
 				) : (
-					<img
-						src={cancel_Icon}
-						alt="arrow"
-						width="10"
-						height="10"
-						onClick={handleCloseDrawer}
-						style={{ cursor: "pointer", marginLeft: "15px" }}
-					/>
+					// <img
+					// 	src={cancel_Icon}
+					// 	alt="arrow1"
+					// 	width="10"
+					// 	height="10"
+					// 	onClick={handleCloseDrawer}
+					// 	style={{ cursor: "pointer", marginLeft: "15px" }}
+					// />
+					<Box component={'div'} onClick={handleCloseDrawer}
+					style={{ cursor: "pointer", marginLeft: "15px",paddingTop:'10px' }}>
+						<CancelIcons sx={{width:20,height:20}}/>
+						</Box>
 				)}
 
 				{/* <Box px={'32px'}>
@@ -362,12 +367,13 @@ export default function CardView({
 									alignItems={"center"}
 									gap={"5px"}
 								>
-									<img
+									{/* <img
 										src={calenderTask}
 										alt="task-calender"
 										width="12"
 										height="12.33"
-									/>
+									/> */}
+									<TaskTimeIcons sx={{width:12,height:12}}/>
 									<Typography
 										variant="f12"
 										sx={{

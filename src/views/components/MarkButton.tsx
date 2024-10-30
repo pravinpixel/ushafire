@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { tick } from "../../utils/helpers/assetHelper";
 import { Typography } from "@mui/material";
 import { fontWeightBold } from "../../utils/theme/typography";
+import { TickIcons } from "../../utils/theme/svg";
 
 
 export default function MarkButton({label}:{label:string}) {
@@ -13,11 +14,12 @@ export default function MarkButton({label}:{label:string}) {
                 alignItems={"center"}
                 justifyContent={"flex-start"}
             >
-                <img
+                {/* <img
                     src={tick}
                     width={20}
                     height={20}
-                />
+                /> */}
+                <TickIcons sx={{width:20,height:20}}/>
 
                 <Typography
                     color="#2ACE3A"

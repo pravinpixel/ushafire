@@ -6,6 +6,7 @@ import { fontWeightBold, fontWeightMedium, fontWeightRegular } from "../../../ut
 import { useTheme } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
 import { useEssentailApi } from "../../../store/hooks/essentailHooks";
+import { TypeDownArrows, TypeFilters } from "../../../utils/theme/svg";
 
 
 interface MenuItemData {
@@ -154,14 +155,16 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 						cursor: 'pointer'
 					}}
 				>
-                    <img src={typeFilter} alt="type-filter" width='20' height='20'/>
+                    {/* <img src={typeFilter} alt="type-filter" width='20' height='20'/> */}
+					<TypeFilters sx={{width:18,height:18}}/>
                     <Typography variant="f16" fontWeight={fontWeightRegular} color={'rgba(136, 52, 76, 1)'}>Type</Typography>
-					<img
+					{/* <img
 						src={typeDownArrow}
 						alt="Vector"
 						width="20"
 						height="20"
-					/>
+					/> */}
+					<TypeDownArrows sx={{width:18,height:18}} />
 				</Stack>
 			</Box>
 			<Popper

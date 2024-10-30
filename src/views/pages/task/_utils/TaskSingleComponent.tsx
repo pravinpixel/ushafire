@@ -15,6 +15,7 @@ import DayState from "../../../components/DayState";
 import MarkButton from "../../../components/MarkButton";
 import TaskOptionsMenu from "./TaskOptionsMenu";
 import LinkComponent from "../../../components/popupComponents/LinkComponent";
+import { NotificationIcons, RecurrenceIcons, TaskTimeIcons } from "../../../../utils/theme/svg";
 // import UploadDocs from "../../../components/UploadDocs";
 
 type Props = {
@@ -104,7 +105,8 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						{
 							task?.is_recurrence === 1 && (
 								<Box sx={{ maxWidth: '38px', height: '24px', borderRadius: '40px', padding: '4px 11px 4px 11px', border: '1px solid rgba(226, 226, 226, 1)', background: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-									<img src={ReccurenceIcon} width={11} height={11} alt="reccurence icon" />
+									{/* <img src={ReccurenceIcon} width={11} height={11} alt="reccurence icon" /> */}
+									<RecurrenceIcons sx={{width:11,height:11}}/>
 								</Box>
 							)
 						}
@@ -126,20 +128,22 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 										horizontal: "left",
 									}}
 								>
-									<img
+									{/* <img
 										src={notificationIcon}
 										alt="login-image"
 										width="20"
 										height="20"
-									/>
+									/> */}
+									<NotificationIcons sx={{width:20,height:20}} />
 								</Badge>
 							) : (
-								<img
-									src={notificationIcon}
-									alt="login-image"
-									width="20"
-									height="20"
-								/>
+								// <img
+								// 	src={notificationIcon}
+								// 	alt="login-image"
+								// 	width="20"
+								// 	height="20"
+								// />
+								<NotificationIcons sx={{width:20,height:20}} />
 							)}
 							{params?.tab === "assigned_task" && <TaskOptionsMenu task={task} />}
 						</Box>
@@ -236,12 +240,13 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 							alignItems={"center"}
 							gap={"5px"}
 						>
-							<img
+							{/* <img
 								src={calenderTask}
 								alt="task-calender"
 								width="16"
 								height="16"
-							/>
+							/> */}
+							<TaskTimeIcons sx={{width:16,height:16}}/>
 							<Typography
 								variant="f12"
 								color={"black"}

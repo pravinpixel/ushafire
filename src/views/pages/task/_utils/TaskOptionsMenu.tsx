@@ -9,6 +9,7 @@ import { Divider } from '@mui/material';
 import { fontWeightRegular } from '../../../../utils/theme/typography';
 import { MenuList } from '@mui/material';
 import { Paper } from '@mui/material';
+import { DeleteIcons, EditIcons, MoreOptionIcons } from '../../../../utils/theme/svg';
 
 const getPopUpContent = (type: string | null) => {
     switch (type) {
@@ -85,14 +86,15 @@ const TaskOptionsMenu = ({ task }: { task?: TaskFormType }) => {
             <Box
                 marginLeft={1}
                 sx={{ cursor: "pointer" }}
-                component={'img'}
+                component={'div'}
                 onClick={handleOpen}
-                src={edit}
-                alt="login-image"
-                width="20"
-                height="20"
+                // src={edit}
+                // alt="login-image"
+                // width="20"
+                // height="20"
+                mt={-0.3}
             >
-
+            <MoreOptionIcons sx={{width:20,height:20}}/>
             </Box>
 
             <Menu
@@ -124,12 +126,13 @@ const TaskOptionsMenu = ({ task }: { task?: TaskFormType }) => {
                 <MenuItem onClick={(e) => handleTaskOpen(e, "edit")}
                 sx={{mt:'8px'}}
                 >
-                    <img
+                    {/* <img
                         src={editIcon}
                         alt="editIcon"
                         width={16}
                         height={16}
-                    />
+                    /> */}
+                    <EditIcons sx={{width:16,height:16}}/>
                     <Typography marginLeft={1} variant='f12' color="#000000">Edit</Typography>
                 </MenuItem>
                 <Divider sx={{
@@ -152,12 +155,13 @@ const TaskOptionsMenu = ({ task }: { task?: TaskFormType }) => {
                                     e.stopPropagation()
                                     setAnchorDelete(!anchorDelete);
                                 }}>
-                                <img
+                                {/* <img
                                     src={deleteImage}
                                     alt="deleteImage"
                                     width={16}
                                     height={16}
-                                />
+                                /> */}
+                                <DeleteIcons sx={{width:16,height:16}}/>
                                 <Typography  marginLeft={1} variant='f12' color="#000000">Delete</Typography>
                             </MenuItem>
                             {

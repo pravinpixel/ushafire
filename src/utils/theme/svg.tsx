@@ -91,8 +91,8 @@ export const RatingStarEmptyPopupIcon = (props: SvgIconOwnProps) =>
 		props: {
 			sx: {
 				color: "rgba(245, 245, 245, 1)",
-				width:"20" ,
-				height:"20"
+				width: "20",
+				height: "20"
 
 			},
 			...props,
@@ -115,8 +115,8 @@ export const RatingStarEmptyIcon = (props: SvgIconOwnProps) =>
 		props: {
 			sx: {
 				color: "rgba(245, 245, 245, 1)",
-				width:"20px",
-				height:"20px"
+				width: "20px",
+				height: "20px"
 			},
 			...props,
 		},
@@ -1106,10 +1106,27 @@ export const DownArrowTask = (props: SvgIconOwnProps) =>
 	createIcon({
 		icon: (
 			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.5">
-<path d="M16.6004 7.4585L11.1671 12.8918C10.5254 13.5335 9.47539 13.5335 8.83372 12.8918L3.40039 7.4585" stroke="#050505" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-</svg>
+				<g opacity="0.5">
+					<path d="M16.6004 7.4585L11.1671 12.8918C10.5254 13.5335 9.47539 13.5335 8.83372 12.8918L3.40039 7.4585" stroke="#050505" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				</g>
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#FFB627",
+			},
+			...props,
+		},
+	});
+export const Logout = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M9.40039 7.55999C9.71039 3.95999 11.5604 2.48999 15.6104 2.48999H15.7404C20.2104 2.48999 22.0004 4.27999 22.0004 8.74999V15.27C22.0004 19.74 20.2104 21.53 15.7404 21.53H15.6104C11.5904 21.53 9.74039 20.08 9.41039 16.54" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M15.5001 12H4.12012" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M6.35 8.65002L3 12L6.35 15.35" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
 
 		),
 		props: {
@@ -1120,3 +1137,210 @@ export const DownArrowTask = (props: SvgIconOwnProps) =>
 		},
 	});
 
+export const TypeFilters = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M8.7083 5.59998L5.60828 2.5L2.5083 5.59998" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M5.6084 17.5V2.5" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M11.2915 14.4L14.3915 17.5L17.4915 14.4" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M14.3916 2.5V17.5" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#FFB627",
+			},
+			...props,
+		},
+	});
+
+export const TypeDownArrows = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g opacity="0.5">
+					<path d="M16.5999 7.45834L11.1666 12.8917C10.5249 13.5333 9.4749 13.5333 8.83324 12.8917L3.3999 7.45834" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				</g>
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#FFB627",
+			},
+			...props,
+		},
+	});
+
+export const MenuFilters = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M2.99967 0.75H13.9997C14.9163 0.75 15.6663 1.5 15.6663 2.41667V4.25C15.6663 4.91667 15.2497 5.75 14.833 6.16667L11.2497 9.33333C10.7497 9.75 10.4163 10.5833 10.4163 11.25V14.8333C10.4163 15.3333 10.083 16 9.66634 16.25L8.49967 17C7.41634 17.6667 5.91634 16.9167 5.91634 15.5833V11.1667C5.91634 10.5833 5.58301 9.83333 5.24967 9.41667L2.08301 6.08333C1.66634 5.66667 1.33301 4.91667 1.33301 4.41667V2.5C1.33301 1.5 2.08301 0.75 2.99967 0.75Z" stroke="#050505" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+export const RecurrenceIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M12.6356 7.59536C12.4504 9.33529 11.4646 10.9658 9.83326 11.9076C7.12293 13.4724 3.65725 12.5438 2.09245 9.83348L1.92578 9.54481M1.36441 6.40467C1.54961 4.66474 2.53547 3.03426 4.1668 2.09241C6.87712 0.527604 10.3428 1.45623 11.9076 4.16655L12.0743 4.45523M1.3291 11.044L1.81714 9.22267L3.6385 9.71071M10.3619 4.28934L12.1833 4.77737L12.6713 2.95601" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+export const NotificationIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M10.0165 2.42505C7.25816 2.42505 5.0165 4.66672 5.0165 7.42505V9.83338C5.0165 10.3417 4.79983 11.1167 4.5415 11.55L3.58316 13.1417C2.9915 14.125 3.39983 15.2167 4.48316 15.5834C8.07483 16.7834 11.9498 16.7834 15.5415 15.5834C16.5498 15.2501 16.9915 14.0584 16.4415 13.1417L15.4832 11.55C15.2332 11.1167 15.0165 10.3417 15.0165 9.83338V7.42505C15.0165 4.67505 12.7665 2.42505 10.0165 2.42505Z" stroke="#050505" stroke-miterlimit="10" stroke-linecap="round" />
+				<path d="M11.5579 2.6667C11.2996 2.5917 11.0329 2.53337 10.7579 2.50003C9.95794 2.40003 9.19128 2.45837 8.47461 2.6667C8.71628 2.05003 9.31628 1.6167 10.0163 1.6167C10.7163 1.6167 11.3163 2.05003 11.5579 2.6667Z" stroke="#050505" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M12.5166 15.8833C12.5166 17.2583 11.3916 18.3833 10.0166 18.3833C9.33327 18.3833 8.69993 18.1 8.24993 17.65C7.79993 17.2 7.5166 16.5666 7.5166 15.8833" stroke="#050505" stroke-miterlimit="10" />
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+export const MoreOptionIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="20" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11.667 4.16667C11.667 3.25 10.917 2.5 10.0003 2.5C9.08366 2.5 8.33366 3.25 8.33366 4.16667C8.33366 5.08333 9.08366 5.83333 10.0003 5.83333C10.917 5.83333 11.667 5.08333 11.667 4.16667Z" fill="#050505" />
+				<path d="M11.667 15.8333C11.667 14.9166 10.917 14.1666 10.0003 14.1666C9.08366 14.1666 8.33366 14.9166 8.33366 15.8333C8.33366 16.75 9.08366 17.5 10.0003 17.5C10.917 17.5 11.667 16.75 11.667 15.8333Z" fill="#050505" />
+				<path d="M11.667 10C11.667 9.08337 10.917 8.33337 10.0003 8.33337C9.08366 8.33337 8.33366 9.08337 8.33366 10C8.33366 10.9167 9.08366 11.6667 10.0003 11.6667C10.917 11.6667 11.667 10.9167 11.667 10Z" fill="#050505" />
+			</svg>
+
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+
+export const TaskTimeIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M5.33301 1.33337V3.33337" stroke="#050505" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M10.667 1.33337V3.33337" stroke="#050505" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M2.33301 6.06006H13.6663" stroke="#050505" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M14 5.66671V11.3334C14 13.3334 13 14.6667 10.6667 14.6667H5.33333C3 14.6667 2 13.3334 2 11.3334V5.66671C2 3.66671 3 2.33337 5.33333 2.33337H10.6667C13 2.33337 14 3.66671 14 5.66671Z" stroke="#050505" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+export const EditIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M10.6663 1.3335H5.33301C2.66634 1.3335 1.33301 2.66683 1.33301 5.3335V14.0002C1.33301 14.3668 1.63301 14.6668 1.99967 14.6668H10.6663C13.333 14.6668 14.6663 13.3335 14.6663 10.6668V5.3335C14.6663 2.66683 13.333 1.3335 10.6663 1.3335Z" stroke="#292D32" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M8.60685 5.22677L5.14685 8.68677C5.01352 8.8201 4.88686 9.0801 4.86019 9.26677L4.67353 10.5868C4.60686 11.0668 4.94019 11.4001 5.42019 11.3334L6.74018 11.1468C6.92684 11.1201 7.18686 10.9934 7.32019 10.8601L10.7802 7.4001C11.3735 6.80677 11.6602 6.11343 10.7802 5.23343C9.90019 4.34677 9.20685 4.62677 8.60685 5.22677Z" stroke="#292D32" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M8.11328 5.72021C8.40661 6.76688 9.22661 7.59355 10.2799 7.88688" stroke="#292D32" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+
+export const DeleteIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7.26638 6.76718C7.26638 6.49103 7.04253 6.26718 6.76638 6.26718C6.49024 6.26718 6.26638 6.49103 6.26638 6.76718V11.0839C6.26638 11.36 6.49024 11.5839 6.76638 11.5839C7.04253 11.5839 7.26638 11.36 7.26638 11.0839V6.76718Z" fill="#FF5252" />
+				<path d="M9.23315 6.26718C9.50929 6.26718 9.73315 6.49103 9.73315 6.76718V9.23385C9.73315 9.51 9.50929 9.73385 9.23315 9.73385C8.95701 9.73385 8.73315 9.51 8.73315 9.23385V6.76718C8.73315 6.49103 8.95701 6.26718 9.23315 6.26718Z" fill="#FF5252" />
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.23035 1.33357C6.88861 1.33306 6.58868 1.33261 6.32142 1.43772C6.08773 1.52963 5.88085 1.67874 5.71975 1.87137C5.53552 2.09168 5.4411 2.37637 5.33352 2.70073L5.17246 3.18412H1.83301C1.55687 3.18412 1.33301 3.40798 1.33301 3.68412C1.33301 3.96026 1.55687 4.18412 1.83301 4.18412H2.59489L2.94889 10.202C2.9894 10.8908 3.02155 11.4374 3.0828 11.8776C3.14552 12.3284 3.2434 12.7083 3.43741 13.0533C3.75279 13.614 4.23148 14.0653 4.80975 14.3473C5.16547 14.5207 5.55052 14.5961 6.00419 14.6322C6.44721 14.6675 6.99473 14.6675 7.68464 14.6675H8.31467C9.00458 14.6675 9.55219 14.6675 9.99522 14.6322C10.4489 14.5961 10.8339 14.5207 11.1897 14.3473C11.7679 14.0653 12.2466 13.614 12.562 13.0533C12.756 12.7083 12.8539 12.3284 12.9166 11.8776C12.9778 11.4374 13.01 10.8908 13.0505 10.202L13.4045 4.18412H14.1664C14.4425 4.18412 14.6664 3.96026 14.6664 3.68412C14.6664 3.40798 14.4425 3.18412 14.1664 3.18412H10.8269L10.6658 2.70073C10.5583 2.37637 10.4638 2.09168 10.2796 1.87137C10.1185 1.67874 9.91163 1.52963 9.67793 1.43772C9.41068 1.33261 9.11074 1.33306 8.769 1.33357H7.23035ZM9.7728 3.18412L9.74002 3.08579C9.59539 2.65191 9.55856 2.56799 9.51248 2.51288C9.45878 2.44867 9.38982 2.39897 9.31193 2.36833C9.24508 2.34204 9.15382 2.33364 8.69647 2.33364H7.30288C6.84553 2.33364 6.75427 2.34204 6.68742 2.36833C6.60953 2.39897 6.54057 2.44867 6.48687 2.51288C6.44079 2.56799 6.40396 2.65191 6.25933 3.08579L6.22655 3.18412H9.7728ZM3.94591 10.122L3.59662 4.18412H12.4028L12.0535 10.122C12.0114 10.8368 11.9813 11.3437 11.9261 11.7398C11.8719 12.1299 11.7981 12.3716 11.6904 12.563C11.4746 12.9467 11.1471 13.2555 10.7514 13.4484C10.554 13.5446 10.3084 13.6041 9.9158 13.6354C9.5171 13.6671 9.00934 13.6675 8.29332 13.6675H7.70608C6.99006 13.6675 6.4823 13.6671 6.0836 13.6354C5.69095 13.6041 5.44541 13.5446 5.24796 13.4484C4.85231 13.2555 4.52478 12.9467 4.30899 12.563C4.2013 12.3716 4.12754 12.1299 4.07326 11.7398C4.01814 11.3437 3.98796 10.8368 3.94591 10.122Z" fill="#FF5252" />
+			</svg>
+
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+
+export const TickIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M18.3337 9.23806V10.0047C18.3326 11.8017 17.7507 13.5503 16.6748 14.9896C15.5988 16.4289 14.0864 17.4818 12.3631 17.9913C10.6399 18.5008 8.79804 18.4396 7.11238 17.8169C5.42673 17.1941 3.98754 16.0431 3.00946 14.5356C2.03138 13.0281 1.56682 11.2448 1.68506 9.45166C1.80329 7.65853 2.498 5.95167 3.66556 4.58562C4.83312 3.21958 6.41098 2.26755 8.16382 1.87152C9.91665 1.47549 11.7505 1.65668 13.392 2.38806M18.3337 3.33329L10.0003 11.675L7.50033 9.17496" stroke="#2ACE3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+
+export const ArrowLeftIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7.99984 16.9201L1.47984 10.4001C0.709844 9.63008 0.709844 8.37008 1.47984 7.60008L7.99984 1.08008" stroke="#88344C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});
+export const CancelIcons = (props: SvgIconOwnProps) =>
+	createIcon({
+		icon: (
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M17 7L7 17M7 7L17 17" stroke="#535353" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+
+		),
+		props: {
+			sx: {
+				color: "#050505",
+			},
+			...props,
+		},
+	});

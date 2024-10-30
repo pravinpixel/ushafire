@@ -7,6 +7,7 @@ import { fontWeightBold } from "../../../utils/theme/typography";
 import TaskForm from "../../pages/task/_utils/TaskForm";
 import Transition from "./Transition";
 import { DialogProps } from "@mui/material";
+import { ArrowLeftIcons } from "../../../utils/theme/svg";
 
 
 const TaskPopUp = ({ id, onClose, handleTaskClose }: { id?: TaskFormType['id'] | null, onClose?: () => void, handleTaskClose?: () => void }) => {
@@ -81,12 +82,13 @@ const TaskPopUp = ({ id, onClose, handleTaskClose }: { id?: TaskFormType['id'] |
 							sx={{ cursor: "pointer" }}
 							onClick={handleClose as never}
 						>
-							<img
+							{/* <img
 								alt="arrow-left"
 								src={arrowLeft}
 								width={24}
 								height={24}
-							/>
+							/> */}
+							<ArrowLeftIcons sx={{width:20,height:20}}/>
 						</Box>
 						<DialogTitle
 							color="#88344C"

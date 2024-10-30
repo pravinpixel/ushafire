@@ -7,6 +7,7 @@ import CustomButton from "../Button";
 import { InitialPagination } from "../../../utils/helpers/globalHelper";
 import { useTheme } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
+import { MenuFilters } from "../../../utils/theme/svg";
 
 
 interface MenuItemData {
@@ -167,12 +168,13 @@ export default function MenuItemFilter({ params, setParams }: ParamsType) {
 						cursor: 'pointer'
 					}}
 				>
-					<img
+					{/* <img
 						src={Vector}
 						alt="Vector"
 						width="16"
 						height="18"
-					/>
+					/> */}
+					<MenuFilters sx={{width:16,height:18}}/>
 				</Stack>
 			</Box>
 			<Popper
