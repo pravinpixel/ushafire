@@ -91,6 +91,9 @@ const DatePickerField = (props: DatePickerFieldType) => {
 										size: "small",
 										...fieldProps,
 										required: false,
+										onKeyDown: (e) => {
+											e.preventDefault();
+										},
 										InputProps: {
 											endAdornment: (
 												<InputAdornment position="end">
