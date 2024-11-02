@@ -50,7 +50,10 @@ import {
   CancelIcons,
   ClockIcons,
   CloseIcons,
+  MarkIcons,
   TaskTimeIcons,
+  DeletedIcons,
+  TickIcons,
 } from "../../utils/theme/svg";
 
 type TaskPopUpType = "my-task" | "self-task";
@@ -59,7 +62,7 @@ const statusIcon = (status?: EssentailStatus["name"]) => {
   switch (status) {
     case "mark as completed":
       return {
-        icon: tick,
+        icon: <TickIcons sx={{ width: 13, height: 13 }} />,
         label: status,
         size: 13,
         sx: {
@@ -68,7 +71,7 @@ const statusIcon = (status?: EssentailStatus["name"]) => {
       };
     case "completed":
       return {
-        icon: tick,
+        icon: <TickIcons sx={{ width: 13, height: 13 }} />,
         label: status,
         size: 13,
         sx: {
@@ -77,7 +80,7 @@ const statusIcon = (status?: EssentailStatus["name"]) => {
       };
     case "closed":
       return {
-        icon: close,
+        icon: <CloseIcons sx={{ width: 16, height: 17 }} />,
         label: status,
         size: 9,
         sx: {
@@ -86,7 +89,7 @@ const statusIcon = (status?: EssentailStatus["name"]) => {
       };
     case "deleted":
       return {
-        icon: deleteIcon,
+        icon: <DeletedIcons sx={{ width: 16, height: 16 }} />,
         label: status,
         size: 13,
         sx: {
@@ -131,9 +134,10 @@ export const StatusComponent = ({
       {label ? (
         <Box display={"flex"} gap={"26px"} alignItems={"center"}>
           <Box display={"flex"} gap={1} alignItems={"center"} marginTop={"5px"}>
-            {icon && (
+            {/* {icon && (
               <img src={icon} alt="logout1" width={size} height={size} />
-            )}
+            )} */}
+            {icon}
 
             <Typography
               color="#2ACE3A"
@@ -165,7 +169,7 @@ export const StatusComponent = ({
 									width={16}
 									height={16}
 								/> */}
-                <ClockIcons sx={{ width: 16, height: 16 }} />
+                <ClockIcons sx={{ width: 16, height: 15 }} />
 
                 <DateFormatter date={task?.status_date as never} />
               </Typography>
@@ -562,7 +566,8 @@ export default function CardView({
                           )
                         }
                         startIcon={
-                          <img src={mark} alt="logout" width={14} height={14} />
+                          //   <img src={mark} alt="logout" width={14} height={14} />
+                          <MarkIcons sx={{ width: 12, height: 12 }} />
                         }
                         sx={{
                           width: { xs: "calc(60% - 6px)" },
@@ -611,7 +616,8 @@ export default function CardView({
                           )
                         }
                         startIcon={
-                          <img src={mark} alt="logout" width={14} height={14} />
+                          //   <img src={mark} alt="logout" width={14} height={14} />
+                          <MarkIcons sx={{ width: 14, height: 14 }} />
                         }
                         sx={{
                           width: 160,
@@ -630,7 +636,7 @@ export default function CardView({
                           //     width={12}
                           //     height={12}
                           //   />
-                          <CloseIcons sx={{ width: 18, height: 18 }} />
+                          <CloseIcons sx={{ width: 19, height: 19 }} />
                         }
                         sx={{
                           color: "#373737",
