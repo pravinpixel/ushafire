@@ -94,7 +94,7 @@ const TaskOptionsMenu = ({ task }: { task?: TaskFormType }) => {
                 // height="20"
                 mt={-0.3}
             >
-            <MoreOptionIcons sx={{width:20,height:20}}/>
+            <MoreOptionIcons sx={{width:{xs:16,sm:20},height:{xs:16,sm:20}}}/>
             </Box>
 
             <Menu

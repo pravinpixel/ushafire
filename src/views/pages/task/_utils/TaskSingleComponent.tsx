@@ -134,7 +134,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 										width="20"
 										height="20"
 									/> */}
-									<NotificationIcons sx={{width:20,height:20}} />
+									<NotificationIcons sx={{width:{xs:16,sm:20},height:20}} />
 								</Badge>
 							) : (
 								// <img
@@ -143,7 +143,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 								// 	width="20"
 								// 	height="20"
 								// />
-								<NotificationIcons sx={{width:20,height:20}} />
+								<NotificationIcons sx={{width:{xs:16,sm:20},height:20}} />
 							)}
 							{params?.tab === "assigned_task" && <TaskOptionsMenu task={task} />}
 						</Box>
