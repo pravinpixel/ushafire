@@ -18,7 +18,7 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { fontWeightBold } from "../../../utils/theme/typography";
 import ChangePassword from "../../components/popupComponents/ChangePassword";
-import { Logout } from "../../../utils/theme/svg";
+import { Logout, TaskMasterLogoIcons } from "../../../utils/theme/svg";
 
 const UserTableContent = ({
   name,
@@ -161,7 +161,8 @@ const Sidebar = ({ show }: { show: boolean }) => {
       }}
     >
       <Stack alignItems="center">
-        <img src={task_logo} alt="login-image" width="33" height="46"></img>
+        {/* <img src={task_logo} alt="login-image" width="33" height="46"></img> */}
+        <TaskMasterLogoIcons sx={{width:33,height:46}} />
         <Typography variant="f20" lineHeight={"25.27px"}>
           Task Master
         </Typography>

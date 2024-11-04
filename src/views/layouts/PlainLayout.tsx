@@ -9,9 +9,14 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 // import { loginImage } from "../../utils/helpers/assetHelper";
 import { loginSide,task_logo} from "../../utils/helpers/assetHelper";
 import { fontWeightMedium, fontWeightRegular} from "../../utils/theme/typography";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material";
+import { TaskMasterLogoIcons } from "../../utils/theme/svg";
 // ----------------------------------------------------------------------
 
 export default function PlainLayout({ children }: { children: React.ReactNode }) {
+	const theme = useTheme();
+	const isXs = useMediaQuery(theme.breakpoints.down("md"));
 	return (
 		<Grid
 			container
@@ -20,7 +25,12 @@ export default function PlainLayout({ children }: { children: React.ReactNode })
 				display: 'none', 
 			  },
 			  '-ms-overflow-style': 'none',  
-			  'scrollbar-width': 'none',   }}
+			  'scrollbar-width': 'none', 
+			'& .MuiPaper-root':{
+				'@media (max-width: 899px)': {
+					paddingX:'24px'
+				  }
+			}  }}
 		>
 			<Grid
 				item
@@ -43,7 +53,7 @@ export default function PlainLayout({ children }: { children: React.ReactNode })
 						md: "45%",
 					},
 					minHeight: {
-						xs: "45%",
+						xs: "34%",
 						sm:"50%",
 						md: "auto",
 					},
@@ -57,9 +67,10 @@ export default function PlainLayout({ children }: { children: React.ReactNode })
 			>
 				<Box  sx={{display:{xs:'block',md:'block'}}}>
                     <Box display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <img src={task_logo} alt="logo" width={75} height={75} />
+                    {/* <img src={task_logo} alt="logo" width={isXs? '35px':75} height={isXs? '49px':75} /> */}
+					<TaskMasterLogoIcons sx={{width:isXs? '35px':95,height:isXs? '49px':130}}/>
 					</Box>
-					<Typography mt={{xs:-0.5,md:-2}}  display={'flex'}  alignItems={'center'}  sx={{fontWeight:fontWeightMedium,color:'rgba(255, 255, 255, 1)',fontSize:{xs:'22px',md:'59px'}}}>Task Master</Typography>
+					<Typography mt={{xs:0,md:-2}}  display={'flex'}  alignItems={'center'}  sx={{fontWeight:fontWeightMedium,color:'rgba(255, 255, 255, 1)',fontSize:{xs:'22px',md:'59px'}}}>Task Master</Typography>
 					
 				</Box>
 				<Box  sx={{display:{xs:'none',md:'block',position:'absolute',bottom:"9%"}}} alignItems={'center'} justifyContent={'center'}>

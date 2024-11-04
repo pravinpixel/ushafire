@@ -53,10 +53,10 @@ function Login() {
 				sx={{ fontWeight: fontWeightBold }}
 				color="#88344C"
 				textAlign={"center"}
-				mb={{xs:4,md:5}}
+				mb={{xs:3,md:5}}
 				maxWidth={"443px"}
 				minHeight={'43px'}
-				mt={{xs:5,md:0}}
+				mt={{xs:4,md:0}}
 			>
 				Login with your Mobile Number
 			</Typography>
@@ -111,7 +111,7 @@ function Login() {
 					justifyContent={"center"}
 					alignItems={"center"}
 					mt={{xs:3,md:5}}
-					mb={{xs:8,md:'auto'}}
+					mb={{xs:'148px',md:'auto'}}
 				>
 					<CustomButton
 						type="submit"

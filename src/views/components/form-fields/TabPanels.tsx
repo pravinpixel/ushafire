@@ -6,6 +6,7 @@ import ProgressBar from "../ProgressBar";
 import { fontWeightMedium, fontWeightRegular } from "../../../utils/theme/typography";
 import { Typography } from "@mui/material";
 import { typeCancelIcon } from "../../../utils/helpers/assetHelper";
+import { FilterCancelIcons } from "../../../utils/theme/svg";
 
 
 type TabListType = {
@@ -35,9 +36,10 @@ const TypeFilterView = (props:any)=>{
 			value?.map((item:any)=>(
 				<Box  sx={{borderRadius:'90px', border:'1px solid rgba(136, 52, 76, 1)',padding:'4px 10px 4px 10px',flexWrap:'wrap',position:'relative',minWidth:'63px',}}>
 				<Typography variant="f12" fontWeight={fontWeightRegular} sx={{color:'rgba(136, 52, 76, 1)',lineHeight:'16.2px',display:'flex',alignItems:'center',justifyContent:'center'}} > {item.title}</Typography> 
-				<Box sx={{position:'absolute',top: "-17px",
+				<Box sx={{position:'absolute',top: "-14px",
 									right: "-1px",cursor:'pointer'}}  onClick={() => handleRemoveItem(item.value)}>
-					<img src={typeCancelIcon} alt="cancel-icon" width={'12'} height={'12'}/>
+					{/* <img src={typeCancelIcon} alt="cancel-icon" width={'12'} height={'12'}/> */}
+					<FilterCancelIcons sx={{width:12,height:12}}/>
 				</Box>
 			   </Box>
 			))

@@ -54,7 +54,7 @@ const VerifyOtp = () => {
 				sx={{ fontWeight: fontWeightBold }}
 				color="#88344C"
 				mb={{xs:3,md:5}}
-				mt={{xs:5,md:0}}
+				mt={{xs:4,md:0}}
 			>
 				Verify your email
 			</Typography>
@@ -95,7 +95,7 @@ const VerifyOtp = () => {
 					justifyContent="center"
 					sx={{ width: { xs: "100%", md: "auto" } }}
 					mt={{ xs: 6,md:13 }}
-					mb={{xs:8,md:'auto'}}
+					mb={{xs:'148px',md:'auto'}}
 				>
 					<CustomButton
 						sx={{ width: { xs: "100%", md: "auto" } }}

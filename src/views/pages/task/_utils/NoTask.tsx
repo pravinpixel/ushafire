@@ -1,5 +1,6 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { NoTaskLogo } from '../../../../utils/helpers/assetHelper'
+import { NoTaskIcons } from '../../../../utils/theme/svg'
 
 const NoTask = () => {
     const theme = useTheme()
@@ -17,7 +18,11 @@ const NoTask = () => {
 
         }}>
 
-            <img src={NoTaskLogo} height={isResponsive ? "60px" : "77px"} width={isResponsive ? "71px" :"91px"} />
+            {/* <img src={NoTaskLogo} height={isResponsive ? "60px" : "77px"} width={isResponsive ? "71px" :"91px"} /> */}
+            <NoTaskIcons sx={{
+                width:isResponsive ? "60px" : "77px",
+                height:isResponsive ? "71px" :"91px"
+            }} />
             <Typography sx={{
                 color: "rgba(222, 222, 222, 1)",
                 fontSize: isResponsive ? "26px !important" : "40px !important",

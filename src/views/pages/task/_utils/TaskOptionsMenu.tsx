@@ -216,12 +216,13 @@ const TaskOptionsMenu = ({ task }: { task?: TaskFormType }) => {
                                 handleTaskOpen(e, "delete")
 
                             }}>
-                            <img
+                            {/* <img
                                 src={deleteImage}
                                 alt="deleteImage"
                                 width={16}
                                 height={16}
-                            />
+                            /> */}
+                            <DeleteIcons sx={{width:16,height:16}}/>
                             <Typography marginLeft={1} variant='f12' color="#000000">Delete</Typography>
                         </MenuItem>
                     )

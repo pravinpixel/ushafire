@@ -43,7 +43,7 @@ function SendMail() {
 				justifyContent="center"
 				color="#88344C"
 				mb={{xs:3,md:5}}
-				mt={{xs:5,md:0}}
+				mt={{xs:4,md:0}}
 			>
 				Forgot password
 			</Typography>
@@ -65,7 +65,7 @@ function SendMail() {
 				justifyContent="center"
 				sx={{ width: { xs: "100%", md: "auto" } }}
 				mt={{ xs: 6, md:17.75 }}
-				mb={{xs:8,md:'auto'}}
+				mb={{xs:'148px',md:'auto'}}
 			>
 				<CustomButton
 					sx={{ width: { xs: "100%", md: "auto" } }}

@@ -1906,3 +1906,80 @@ export const DeletedIcons = (props: SvgIconOwnProps) =>
       ...props,
     },
   });
+  export const NoTaskIcons = (props: SvgIconOwnProps) =>
+    createIcon({
+      icon: (
+        <svg width="77" height="91" viewBox="0 0 77 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_i_993_1797)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3256 80.102C53.3262 77.2569 54.2856 74.4974 56.0449 72.2803C57.8043 70.0632 60.2581 68.5217 63 67.9109C55.4348 45.2722 47.8687 22.6352 40.3018 0C37.5468 8.57067 34.1127 10.1627 38.8564 22.2058C45.5887 41.347 48.9767 50.5488 48.2078 61.1245C47.621 71.1054 40.9348 77.7464 34.8815 77.6996C28.7822 77.7438 22.096 71.1054 21.5091 61.1245C20.7403 50.5488 24.1308 41.3444 30.8606 22.2058C35.6042 10.1627 32.1727 8.56028 29.4152 0C19.6118 29.348 9.80678 58.6814 0 88H56.1062C54.3042 85.7734 53.3214 82.9817 53.3256 80.102Z" fill="#DEDEDE"/>
+        </g>
+        <g filter="url(#filter1_i_993_1797)">
+        <path d="M66 91C72.0751 91 77 86.0751 77 80C77 73.9249 72.0751 69 66 69C59.9249 69 55 73.9249 55 80C55 86.0751 59.9249 91 66 91Z" fill="#DEDEDE"/>
+        </g>
+        <path d="M64.8903 87C64.8501 86.9999 64.8104 86.9911 64.7736 86.9743C64.7368 86.9575 64.7038 86.9329 64.6767 86.9021L59.0797 80.593C59.0326 80.5412 59.0046 80.4739 59.0005 80.4028C58.9964 80.3317 59.0165 80.2614 59.0573 80.2042C59.098 80.1467 59.1565 80.1056 59.223 80.0877C59.2895 80.0699 59.36 80.0765 59.4224 80.1063L64.5426 82.5939C64.5636 82.6041 64.5872 82.6071 64.61 82.6025C64.6328 82.5979 64.6535 82.5858 64.6693 82.5682L72.4887 74.0959C72.5397 74.0399 72.6092 74.006 72.6833 74.0007C72.7574 73.9955 72.8306 74.0193 72.8885 74.0676C72.9459 74.1157 72.9842 74.184 72.9961 74.2595C73.008 74.335 72.9927 74.4124 72.9531 74.477L65.1833 86.8172C65.1728 86.835 65.1603 86.8514 65.146 86.8661L65.1113 86.9021C65.0836 86.9309 65.0507 86.9537 65.0145 86.9692C64.9782 86.9847 64.9394 86.9925 64.9002 86.9923L64.8903 87Z" fill="white"/>
+        <defs>
+        <filter id="filter0_i_993_1797" x="0" y="0" width="63" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0"/>
+        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_993_1797"/>
+        </filter>
+        <filter id="filter1_i_993_1797" x="55" y="69" width="22" height="26" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0"/>
+        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_993_1797"/>
+        </filter>
+        </defs>
+        </svg>
+        
+      ),
+      props: {
+        sx: {
+          color: "#050505",
+        },
+        ...props,
+      },
+    });
+    export const TaskMasterLogoIcons = (props: SvgIconOwnProps) =>
+      createIcon({
+        icon: (
+          <svg width="116" height="137" viewBox="0 0 116 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M80.9056 119.816C80.9064 115.561 82.3607 111.433 85.0277 108.117C87.6947 104.8 91.4145 102.494 95.5709 101.581C84.1028 67.718 72.6335 33.8577 61.1628 0C56.9866 12.82 51.7809 15.2014 58.9718 33.2154C69.1773 61.8467 74.313 75.6107 73.1476 91.4297C72.258 106.359 62.1224 116.293 52.9464 116.223C43.7005 116.289 33.5649 106.359 32.6753 91.4297C31.5098 75.6107 36.6495 61.8428 46.8511 33.2154C54.0419 15.2014 48.8401 12.8044 44.66 0C29.7992 43.8987 14.9358 87.7754 0.0698242 131.63H85.1206C82.3891 128.3 80.8991 124.124 80.9056 119.816Z" fill="white"/>
+          <path d="M99.576 136.234C108.643 136.234 115.993 128.883 115.993 119.816C115.993 110.749 108.643 103.399 99.576 103.399C90.509 103.399 83.1587 110.749 83.1587 119.816C83.1587 128.883 90.509 136.234 99.576 136.234Z" fill="#00A651"/>
+          <path d="M97.6219 131.04C97.5591 131.04 97.4969 131.026 97.4394 131.001C97.3819 130.976 97.3303 130.938 97.2878 130.892L88.5314 121.374C88.4578 121.296 88.4139 121.194 88.4076 121.087C88.4012 120.98 88.4326 120.874 88.4964 120.788C88.56 120.701 88.6516 120.639 88.7557 120.612C88.8597 120.585 88.9699 120.595 89.0675 120.64L97.078 124.393C97.1109 124.408 97.1478 124.413 97.1835 124.406C97.2191 124.399 97.2516 124.381 97.2762 124.354L109.51 111.573C109.589 111.488 109.698 111.437 109.814 111.429C109.93 111.421 110.044 111.457 110.135 111.53C110.225 111.603 110.285 111.706 110.303 111.82C110.322 111.934 110.298 112.05 110.236 112.148L98.0803 130.764C98.064 130.791 98.0444 130.816 98.0221 130.838L97.9677 130.892C97.9244 130.935 97.8729 130.97 97.8162 130.993C97.7595 131.017 97.6988 131.028 97.6375 131.028L97.6219 131.04Z" fill="white"/>
+          </svg>
+          
+        ),
+        props: {
+          sx: {
+            color: "#050505",
+          },
+          ...props,
+        },
+      });
+      export const FilterCancelIcons = (props: SvgIconOwnProps) =>
+        createIcon({
+          icon: (
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="12" height="12" rx="6" fill="#FF0D04"/>
+<path d="M8.5 3.5L3.5 8.5M3.5 3.5L8.5 8.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+            
+          ),
+          props: {
+            sx: {
+              color: "#050505",
+            },
+            ...props,
+          },
+        });
+      
