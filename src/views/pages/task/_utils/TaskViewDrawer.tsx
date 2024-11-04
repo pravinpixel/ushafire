@@ -65,7 +65,7 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                                                 style={{ cursor: "pointer", marginLeft: "15px" }}
                                             /> */}
                                               <Box component={'div'} onClick={handleCloseDrawer}
-                                                style={{ cursor: "pointer", marginLeft: "15px" }}>
+                                                style={{ cursor: "pointer", }}>
                                                <CancelIcons />
                                               </Box>
                                       
