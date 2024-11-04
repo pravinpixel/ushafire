@@ -5,7 +5,6 @@ import ResponsiveSideBar from "../sidebar/ResponsiveSideBar";
 import ProgressBar from "../ProgressBar";
 import { fontWeightMedium, fontWeightRegular } from "../../../utils/theme/typography";
 import { Typography } from "@mui/material";
-import { typeCancelIcon } from "../../../utils/helpers/assetHelper";
 import { FilterCancelIcons } from "../../../utils/theme/svg";
 
 

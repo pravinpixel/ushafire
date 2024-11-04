@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { tick } from "../../utils/helpers/assetHelper";
 import { Typography } from "@mui/material";
 import { fontWeightBold } from "../../utils/theme/typography";
 import { TickIcons } from "../../utils/theme/svg";

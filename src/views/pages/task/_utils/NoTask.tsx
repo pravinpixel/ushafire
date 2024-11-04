@@ -1,5 +1,4 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
-import { NoTaskLogo } from '../../../../utils/helpers/assetHelper'
 import { NoTaskIcons } from '../../../../utils/theme/svg'
 
 const NoTask = () => {

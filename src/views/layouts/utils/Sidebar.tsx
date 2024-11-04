@@ -4,7 +4,6 @@ import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 import { useLogoutApi } from "../../../store/hooks/authHooks";
 import { NAV } from "../../../utils/constants";
-import { task_logo } from "../../../utils/helpers/assetHelper";
 import { notify } from "../../../utils/helpers/globalHelper";
 import userStore from "../../../zustand/UserZustand";
 import CustomButton from "../../components/Button";

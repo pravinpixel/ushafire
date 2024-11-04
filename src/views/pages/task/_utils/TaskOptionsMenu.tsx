@@ -1,14 +1,12 @@
 import { Box, Menu, MenuItem, Typography } from '@mui/material';
 import React, { MouseEvent, useState } from 'react';
 // import { useTaskDelete } from '../../../../store/hooks/taskHooks';
-import { deleteImage, edit, editIcon } from '../../../../utils/helpers/assetHelper';
 import TaskPopUp from '../../../components/popupComponents/TaskPopUp';
 import ConfrimPopUp from '../../../components/popupComponents/ConfrimPopUp';
 import { useTaskDelete } from '../../../../store/hooks/taskHooks';
 import { Divider } from '@mui/material';
 import { fontWeightRegular } from '../../../../utils/theme/typography';
 import { MenuList } from '@mui/material';
-import { Paper } from '@mui/material';
 import { DeleteIcons, EditIcons, MoreOptionIcons } from '../../../../utils/theme/svg';
 
 const getPopUpContent = (type: string | null) => {

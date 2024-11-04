@@ -1,6 +1,5 @@
 import { IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/material";
-import { document as documentImg } from "../../utils/helpers/assetHelper";
 import { fontWeightRegular } from "../../utils/theme/typography";
 import CloseIcon from "@mui/icons-material/Close";
 import { MouseEvent } from "react";

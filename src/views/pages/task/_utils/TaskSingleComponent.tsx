@@ -1,10 +1,5 @@
 import { Avatar, Badge, Box, Chip, Paper, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React, { MouseEvent } from "react";
-import {
-	calenderTask,
-	notificationIcon,
-	ReccurenceIcon,
-} from "../../../../utils/helpers/assetHelper";
 import { statusArray } from "../../../../utils/helpers/globalHelper";
 import { fontWeightBold, fontWeightRegular } from "../../../../utils/theme/typography";
 import userStore from "../../../../zustand/UserZustand";

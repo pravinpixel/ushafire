@@ -2,7 +2,6 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box, Dialog, DialogTitle, Divider, IconButton, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { MouseEvent, useState } from "react";
 import { useTaskListView } from "../../../store/hooks/taskHooks";
-import { arrowLeft } from "../../../utils/helpers/assetHelper";
 import { fontWeightBold } from "../../../utils/theme/typography";
 import TaskForm from "../../pages/task/_utils/TaskForm";
 import Transition from "./Transition";

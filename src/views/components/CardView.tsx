@@ -14,15 +14,15 @@ import {
 import { useState } from "react";
 
 import { useCloseTask } from "../../store/hooks/taskHooks";
-import {
-  calenderTask,
-  cancel_Icon,
-  clockIcon,
-  close,
-  deleteIcon,
-  mark,
-  tick,
-} from "../../utils/helpers/assetHelper";
+// import {
+//   calenderTask,
+//   cancel_Icon,
+//   clockIcon,
+//   close,
+//   deleteIcon,
+//   mark,
+//   tick,
+// } from "../../utils/helpers/assetHelper";
 import { statusArray } from "../../utils/helpers/globalHelper";
 import {
   fontWeightBold,

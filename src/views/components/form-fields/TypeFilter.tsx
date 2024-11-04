@@ -1,7 +1,6 @@
 import { Box, Checkbox, ClickAwayListener,  Grid, Grow, MenuList, Paper, Popper, Stack, Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
-import { typeDownArrow, typeFilter } from "../../../utils/helpers/assetHelper";
 import { fontWeightBold, fontWeightMedium, fontWeightRegular } from "../../../utils/theme/typography";
 import { useTheme } from "@mui/material";
 import { useMediaQuery } from "@mui/material";

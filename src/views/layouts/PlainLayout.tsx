@@ -7,7 +7,7 @@
  */
 import { Box, Grid, Paper, Typography } from "@mui/material";
 // import { loginImage } from "../../utils/helpers/assetHelper";
-import { loginSide,task_logo} from "../../utils/helpers/assetHelper";
+import { loginSide} from "../../utils/helpers/assetHelper";
 import { fontWeightMedium, fontWeightRegular} from "../../utils/theme/typography";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material";

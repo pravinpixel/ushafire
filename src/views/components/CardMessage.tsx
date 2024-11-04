@@ -13,7 +13,6 @@ import {
   useFormContext,
 } from "react-hook-form";
 import { useSaveComment } from "../../store/hooks/taskHooks";
-import { send, uploadIcon } from "../../utils/helpers/assetHelper";
 import {
   notify,
   statusArray,

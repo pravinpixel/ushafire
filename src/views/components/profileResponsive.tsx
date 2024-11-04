@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 
 import { useLogoutApi } from "../../store/hooks/authHooks";
-import { arrow, avatarImage, logout1 } from "../../utils/helpers/assetHelper";
 import { fontWeightBold, fontWeightMedium } from "../../utils/theme/typography";
 import userStore from "../../zustand/UserZustand";
 import CustomButton from "./Button";
@@ -27,12 +26,12 @@ import { useNavigate } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import { ArrowWhitecons, LogoutWhitecons } from "../../utils/theme/svg";
 
-const SmallAvatar = styled(Avatar)(() => ({
-  width: "24px",
-  height: "24px",
-  top: "52px",
-  right: "5px",
-}));
+// const SmallAvatar = styled(Avatar)(() => ({
+//   width: "24px",
+//   height: "24px",
+//   top: "52px",
+//   right: "5px",
+// }));
 
 const LargeAvatar = styled(Avatar)(() => ({
   width: "120px",
