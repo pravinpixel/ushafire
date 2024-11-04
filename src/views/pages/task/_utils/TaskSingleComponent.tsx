@@ -266,7 +266,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						<LinkComponent text={task?.description} />
 					</Typography>
 					{task?.mark_as_completed && task?.status?.name?.toLowerCase() === "inprogress" ? (
-						<Box marginTop={"26px"}>
+						<Box marginTop={"26px"}  marginLeft={2}>
 							<MarkButton label='Marked as completed' />
 						</Box>
 					) : ''}
