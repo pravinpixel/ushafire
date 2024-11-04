@@ -169,7 +169,7 @@ export const StatusComponent = ({
 									width={16}
 									height={16}
 								/> */}
-                <ClockIcons sx={{ width: 16, height: 15 }} />
+                <ClockIcons sx={{ width: 16, height: 16 }} />
 
                 <DateFormatter date={task?.status_date as never} />
               </Typography>
