@@ -3,7 +3,7 @@ import Linkify from "linkify-react"
 
 const LinkComponent = ({ text = '' }) => {
     return (
-        <Box className="link_anchor_tag" onClick={(e) => {
+        <Box className="link_anchor_tag" sx={{wordBreak:'break-all'}} onClick={(e) => {
             e.stopPropagation()
         }}>
             <Linkify options={{

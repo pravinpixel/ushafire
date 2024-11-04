@@ -67,7 +67,13 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 							'@media (max-width: 375px)': {
 							padding:'0px'
 							  }
-						}}}
+						},
+						'& .MuiChip-label':{
+							'@media (max-width: 375px)': {
+							padding:'0px'
+							  }
+						}
+					}}
 					>
 						{task?.status?.name === "inprogress" && (
 							<Chip {...getDueStatus(task?.deadline, current_date)} />
@@ -194,6 +200,7 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						</Box> */}
 						<Typography
 							color={"#050505"}
+							lineHeight={'18.9px'}
 							sx={{ fontSize: "0.75rem", fontWeight: fontWeightBold }}
 						>
 							{task?.task_no}&nbsp;-&nbsp;{task?.name}

@@ -94,6 +94,11 @@ export default function PlainLayout({ children }: { children: React.ReactNode })
 					alignItems: "center",
 					justifyContent: "center",
 					borderRadius: { xs: "50px 50px 0px 0px", md: "0px" },
+					"& .MuiFormLabel-root":{
+						'@media (max-width: 899px)': {
+							marginBottom:'8px'
+						  }
+					}
 				}}
 			>
 				{children}
