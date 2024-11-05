@@ -11,6 +11,7 @@ import MarkButton from "../../../components/MarkButton";
 import TaskOptionsMenu from "./TaskOptionsMenu";
 import LinkComponent from "../../../components/popupComponents/LinkComponent";
 import { NotificationIcons, RecurrenceIcons, TaskTimeIcons } from "../../../../utils/theme/svg";
+import { Grid } from "@mui/material";
 // import UploadDocs from "../../../components/UploadDocs";
 
 type Props = {
@@ -156,6 +157,8 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 					justifyContent={"space-between"}
 					flexWrap={"wrap"}
 				>
+					<Grid container>
+						<Grid item xs={12} lg={7}  sx={{ order: { xs: 2, lg: 1 } }}>
 					<Box
 						display="flex"
 						gap={isXs ? "15px" : "20px"}
@@ -201,11 +204,13 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 						<Typography
 							color={"#050505"}
 							lineHeight={'18.9px'}
-							sx={{ fontSize: "0.75rem", fontWeight: fontWeightBold }}
+							sx={{ fontSize: "0.75rem", fontWeight: fontWeightBold ,wordBreak:'break-all',overflow:'auto'}}
 						>
 							{task?.task_no}&nbsp;-&nbsp;{task?.name}
 						</Typography>
 					</Box>
+					</Grid>
+					<Grid item xs={12} lg={5} display={'flex'} justifyContent={{lg:'flex-end',xs:'flex-start'}} sx={{ order: { xs: 1, lg: 2 } }}>
 					<Box
 						display="flex"
 						gap={isXs ? "6px" : "15px"}
@@ -258,6 +263,8 @@ const TaskSingleComponent = React.memo(({ task, params, current_date, setOpenDra
 							</Typography>
 						</Box>
 					</Box>
+					</Grid>
+					</Grid>
 				</Stack>
 				<Stack
 					direction={"row"}

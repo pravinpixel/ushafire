@@ -36,7 +36,7 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 			'& ::-webkit-scrollbar': { width: 0, background: 'transparent' },
 			'&': { scrollbarWidth: 'none' }}}>
 			<Box sx={{
-				margin: NAV.CHILDMARGIN + "px",
+				padding: NAV.CHILDMARGIN + "px",
 				display: "flex",
 				width: "100%",
 				borderRadius: "5px",
