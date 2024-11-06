@@ -64,7 +64,7 @@ const TabPanels = ({
 }) => {
 	const theme = useTheme();
 	const media = useMediaQuery(theme.breakpoints.down("md"));
-	const [titleValue,setTitleValue]=useState([])
+	const [titleValue,setTitleValue]=useState<FilterTypes[]>([])
 	const handleChange = (e: SyntheticEvent, tab: TaskPagination["tab"]) => {
 		e.preventDefault();
 		setTitleValue([]);

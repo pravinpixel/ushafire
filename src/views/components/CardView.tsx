@@ -11,7 +11,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 import { useCloseTask } from "../../store/hooks/taskHooks";
 // import {
@@ -128,7 +128,7 @@ export const StatusComponent = ({
   condition?: boolean;
 }) => {
   const status = task?.status?.name.toLowerCase();
-  const { label = "", icon = "", size, sx } = statusIcon(status as never);
+  const { label = "", icon = "", sx } = statusIcon(status as never);
   return (
     <>
       {label ? (
@@ -190,7 +190,8 @@ export default function CardView({
 }: {
   handleCloseDrawer: () => void;
   viewTask?: TaskFormType;
-  params: PaginationType;
+  params: TaskPagination;
+  setParams: Dispatch<SetStateAction<TaskPagination>>
 }) {
   const { user } = userStore();
   const theme = useTheme();

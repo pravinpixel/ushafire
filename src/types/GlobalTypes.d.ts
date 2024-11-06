@@ -26,6 +26,7 @@ type ParamsType = {
 	params: TaskPagination;
 	search?: string | null;
 	setParams: React.Dispatch<React.SetStateAction<TaskPagination>>;
+	handleData?:any
 };
 
 type NotifyType = AxiosError<{
@@ -35,3 +36,12 @@ type NotifyType = AxiosError<{
 }>["response"];
 
 type ToastPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center";
+
+
+type FilterTypes ={
+	title?: String;
+	value?: number
+}
+
+
+

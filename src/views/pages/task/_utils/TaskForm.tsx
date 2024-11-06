@@ -61,7 +61,7 @@ const TaskForm = ({
 		}
 		try {
 			if (value?.is_recurrence) {
-				const rule = RRule.fromString(value?.recurrence);
+				const rule = RRule.fromString(value?.recurrence || '');
 				const startDate = rule.options.dtstart;
 				const untilDate = rule.options.until;
 				const frequency = rule.options.freq;

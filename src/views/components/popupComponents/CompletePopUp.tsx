@@ -21,8 +21,8 @@ const CompletePopUp = (props:any) => {
 	const handleFormSubmit = async () => {
 		setLoading(true);
 		try {
-			const data = {
-                task_rating: 0,
+			const data  = {
+                task_rating: 0 as 1 | 2 | 3 | 4 | 5 | undefined,
                 rating_remark: '',
 				status: 'completed' as never
 			}

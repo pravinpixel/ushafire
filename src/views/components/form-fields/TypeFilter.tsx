@@ -122,7 +122,7 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 		  name: "task_category_id",
 		  children: data?.data?.['task-category']?.map((category) => ({
 			title: category.name,
-			value: category.id, 
+			value: String(category.id), 
 		  })) || [],
 		},
 	  ];

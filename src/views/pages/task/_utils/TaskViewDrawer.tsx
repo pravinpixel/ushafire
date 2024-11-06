@@ -5,14 +5,12 @@ import ProgressBar from '../../../components/ProgressBar';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/material";
 import ProfileLogo from '../../../components/sidebar/ProfileLogo';
-import { cancel_Icon } from '../../../../utils/helpers/assetHelper';
 import { Dispatch, SetStateAction } from 'react';
 import { CancelIcons } from '../../../../utils/theme/svg';
 
 
 const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { openDrawer: TaskFormType['id'], handleCloseDrawer: () => void ,params: TaskPagination,
 	setParams: Dispatch<SetStateAction<TaskPagination>>}) => {
-
 
     const { data , isLoading } = useTaskListView(openDrawer);
     const theme = useTheme();

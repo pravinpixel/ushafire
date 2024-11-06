@@ -14,9 +14,9 @@ import dayjs from "dayjs";
 const TaskComponent = ({
 	taskList,
 	params,
-	setParams,
-	isFetching = false,
-	isLoading = false,
+	// setParams,
+	// isFetching = false,
+	// isLoading = false,
 	isLoadMoreLoading = false,
 	current_date,
 	showLoadMore,
@@ -128,7 +128,7 @@ const ListTask = React.memo(() => {
 
 
 	const [taskList, setTaskList] = useState<TaskFormType[]>([]);
-	const [totalValue, setTotalValue] = useState();
+	const [totalValue, setTotalValue] = useState<number | undefined>();
 	const [isLoadMoreLoading, setIsLoadMoreLoading] = useState(false);
 	const { data, isLoading } = useTaskList(params);
 
@@ -136,7 +136,7 @@ const ListTask = React.memo(() => {
 	const total = data?.data?.total || 0;
 	const current_date = data?.data?.current_date || new Date();
 
-	const showLoadMore = taskList.length < totalValue;
+	const showLoadMore = taskList.length < (totalValue || 0);
 	const navigate = useNavigate();
 	const refecthQuery = useQueryClient();
 
