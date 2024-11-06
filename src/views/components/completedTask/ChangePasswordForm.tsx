@@ -15,7 +15,7 @@ const ChangePasswordForm = (props: { handleClose: () => void }) => {
 		formState : {isSubmitting}
 	} = useFormContext<ChangePasswordType>();
     const {mutateAsync}=useChangePasswordApi()
-    const handleFormSubmit = async (values:any) => {
+    const handleFormSubmit = async (values:ChangePasswordType) => {
 		try {
 			const res = await mutateAsync(values)
 			notify(res)

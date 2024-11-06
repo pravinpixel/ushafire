@@ -13,9 +13,8 @@ type TabListType = {
 	value: string;
 	component: ReactNode | JSX.Element;
 };
-const TypeFilterView = (props:any)=>{
-	const {value,handleClearAll,handleRemoveItem}=props
-	
+const TypeFilterView = ({value,handleClearAll,handleRemoveItem}:{value:FilterTypes[],handleClearAll:()=>void,handleRemoveItem:(itemToRemove: number)=>void})=>{
+	// const {value,handleClearAll,handleRemoveItem}=props;
 	return(
 		<Box sx={{"& .MuiDivider-root":{
 			width:'0px !important'
@@ -32,11 +31,11 @@ const TypeFilterView = (props:any)=>{
 	       <Divider orientation="vertical"  flexItem  sx={{borderColor:'rgba(0, 0, 0, 0.2)'}}/>
 		   <Box display={'flex'} flexWrap={'wrap'} gap={{md:'4px',xs:'10px'}}>
 		   {
-			value?.map((item:any)=>(
+			value?.map((item:FilterTypes)=>(
 				<Box  sx={{borderRadius:'90px', border:'1px solid rgba(136, 52, 76, 1)',padding:'4px 10px 4px 10px',flexWrap:'wrap',position:'relative',minWidth:'63px',}}>
 				<Typography variant="f12" fontWeight={fontWeightRegular} sx={{color:'rgba(136, 52, 76, 1)',lineHeight:'16.2px',display:'flex',alignItems:'center',justifyContent:'center'}} > {item.title}</Typography> 
 				<Box sx={{position:'absolute',top: "-14px",
-									right: "-1px",cursor:'pointer'}}  onClick={() => handleRemoveItem(item.value)}>
+									right: "-1px",cursor:'pointer'}}  onClick={() => handleRemoveItem(item.value as number)}>
 					{/* <img src={typeCancelIcon} alt="cancel-icon" width={'12'} height={'12'}/> */}
 					<FilterCancelIcons sx={{width:12,height:12}}/>
 				</Box>
@@ -81,19 +80,17 @@ const TabPanels = ({
 	};
 	
 	
-	const handleData=(pre:any)=>{
+	const handleData=(pre:FilterTypes)=>{
 		// setTitleValue(()=>(
 
 		// ))
-		
-		
-		const temp= titleValue.map((item : any)=> (item.value))
+		const temp= titleValue.map((item : FilterTypes)=> (item.value))
 		const data= titleValue;
 		if(!temp.includes(pre.value)){
 			data.push(pre)
 		setTitleValue(data);	
 		}else{
-			const remove = data.filter((item: any) => item.value !== pre.value);
+			const remove = data.filter((item: FilterTypes) => item.value !== pre.value);
 			setTitleValue(remove)
 		}
 	
@@ -155,7 +152,7 @@ const TabPanels = ({
 			<SearchFilter
 				params={params}
 				setParams={setParams}
-				handleData={handleData}
+				handleData={handleData} 
 			/>
 			{
 				params?.task_category_id.length > 0 && (

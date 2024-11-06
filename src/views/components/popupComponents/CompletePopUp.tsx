@@ -9,8 +9,8 @@ import { Button } from "@mui/material";
 import { useStatusUpdate } from "../../../store/hooks/taskHooks";
 import { notify } from "../../../utils/helpers/globalHelper";
 
-const CompletePopUp = (props:any) => {
-    const { id, onClose ,title,content}=props;
+const CompletePopUp = ( {id, onClose ,title,content}:{id:string,title:string,content:string,onClose:() => void}) => {
+    // // const { id, onClose ,title,content}=props;
     const [open, setOpen] = useState(id ? true : false);
 	const [loading, setLoading] = useState(false);
     const handleClose = () => {

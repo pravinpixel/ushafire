@@ -30,12 +30,11 @@ const TaskComponent = ({
 	showLoadMore?: boolean;
 	isFetching?: boolean;
 	isLoading?: boolean;
-	setOpenDrawer: any;
+	setOpenDrawer: (id: string) => void;
 	isLoadMoreLoading?: boolean;
-	handleLoadMore?: any
+	handleLoadMore?: ()=>void;
 }) => {
 	const currentYear = dayjs().year();
-
 
 	return (
 		<>

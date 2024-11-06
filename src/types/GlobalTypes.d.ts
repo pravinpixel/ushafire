@@ -40,7 +40,7 @@ type ToastPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right" |
 
 type FilterTypes ={
 	title?: String;
-	value?: number
+	value?: number| string;
 }
 
 

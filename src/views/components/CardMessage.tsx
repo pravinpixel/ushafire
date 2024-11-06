@@ -33,7 +33,7 @@ const CommentInput = ({
   name: string;
   loading: boolean;
   taskView: TaskFormType;
-  params: any;
+  params: TaskPagination;
 }) => {
   const { control } = useFormContext();
 
@@ -244,7 +244,7 @@ export default function CardMessage({
 }: {
   taskView: TaskFormType;
   isXs: boolean;
-  params: any;
+  params: TaskPagination;
 }) {
   const { mutateAsync } = useSaveComment();
 

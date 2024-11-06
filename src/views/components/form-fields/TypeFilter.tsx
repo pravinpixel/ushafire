@@ -62,7 +62,7 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 
 		setOpen(false);
 	};
-	const handleFilter = (name: keyof TaskPagination, value?: string, multiple?: boolean, dataValue?:any) => {
+	const handleFilter = (name: keyof TaskPagination, value?: string, multiple?: boolean, dataValue?:FilterTypes) => {
 		if (multiple) {
 			setParams((prevState) => {
 				let valuearr: string[] = prevState?.[name] as never || [];
