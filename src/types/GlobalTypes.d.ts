@@ -26,7 +26,7 @@ type ParamsType = {
 	params: TaskPagination;
 	search?: string | null;
 	setParams: React.Dispatch<React.SetStateAction<TaskPagination>>;
-	handleData?:any
+	handleData?:(pre:FilterTypes)=>void
 };
 
 type NotifyType = AxiosError<{

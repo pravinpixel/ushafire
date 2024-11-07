@@ -81,9 +81,6 @@ const TabPanels = ({
 	
 	
 	const handleData=(pre:FilterTypes)=>{
-		// setTitleValue(()=>(
-
-		// ))
 		const temp= titleValue.map((item : FilterTypes)=> (item.value))
 		const data= titleValue;
 		if(!temp.includes(pre.value)){

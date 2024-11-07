@@ -14,7 +14,7 @@ export default function SearchFilter({ params, setParams,handleData }: ParamsTyp
         <SearchBar setParams={setParams} params={params}  />
       </Grid>
       <Grid item xs={6} sm={3}  md={3} lg={1.7} >
-        <TypeFilter setParams={setParams} params={params} handleData={handleData} />
+        <TypeFilter setParams={setParams} params={params} handleData={handleData as (pre:FilterTypes)=>void} />
       </Grid>
       <Grid item  xs={2} sm={2}  md={2} lg={1}>
         <MenuItemFilter setParams={setParams} params={params}/>

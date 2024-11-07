@@ -37,7 +37,7 @@ interface MenuItemChildData {
 
 
 
-export default function TypeFilter({ params, setParams,handleData }: ParamsType) {
+export default function TypeFilter({ params, setParams,handleData }:{params:TaskPagination,setParams: React.Dispatch<React.SetStateAction<TaskPagination>>,handleData:(pre:FilterTypes)=>void}) {
 	const label = { inputProps: { "aria-label": "Checkbox demo" } };
 	const theme = useTheme();
 	const { data } = useEssentailApi({
@@ -68,7 +68,7 @@ export default function TypeFilter({ params, setParams,handleData }: ParamsType)
 				let valuearr: string[] = prevState?.[name] as never || [];
 				const newarr = (valuearr).includes(value || '');
 				// setTitleValue(dataValue)
-				handleData(dataValue)
+				handleData(dataValue as FilterTypes);
 				if (newarr) {
 					valuearr = valuearr.filter((item) => item !== value);
 				} else {
