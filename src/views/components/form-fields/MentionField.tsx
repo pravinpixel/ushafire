@@ -37,8 +37,8 @@ const MentionField = ({ options }: { options: any[] }) => {
     onSelect={onSelect}
     onChange={onChange}
     options={mappedOptions}
-    split='$'
-    
+    split='@'
+
   />
   </>
   )
