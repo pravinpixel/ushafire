@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { RRule } from "rrule";
 import AutoCompleteField from "../../../components/form-fields/AutoComplete";
 import MultiAutoCompleteField from "../../../components/form-fields/MultipleAutoComplete";
+import MentionField from "../../../components/form-fields/MentionField";
 
 
 const TaskForm = ({
@@ -162,14 +163,15 @@ const TaskForm = ({
 						/>
 					</Box>
 					<Box mt={2}>
-						<InputField
+						{/* <InputField
 							name="description"
 							label="Task description"
 							placeholder="Enter task description"
 							multiline
 							rows={5}
 							mb={1}
-						/>
+						/> */}
+							<MentionField options={data?.data?.employee} row={3} name="description" label="Task description" placeholder="Enter task description"/>
 					</Box>
 					<Box mt={2}>
 						<SelectField

@@ -6,8 +6,6 @@ import ProgressBar from "../ProgressBar";
 import { fontWeightMedium, fontWeightRegular } from "../../../utils/theme/typography";
 import { Typography } from "@mui/material";
 import { FilterCancelIcons } from "../../../utils/theme/svg";
-import MentionField from "./MentionField";
-import { useEssentailApi } from "../../../store/hooks/essentailHooks";
 
 
 type TabListType = {
@@ -110,9 +108,7 @@ const TabPanels = ({
 		 const data= titleValue.filter((pre)=> pre.value !== itemToRemove )
 		 setTitleValue(data)
 	}
-	const { data } = useEssentailApi({
-		keys: ["employee", "priority", "task-category"],
-	});
+	
 
 	return (
 		<>
@@ -157,7 +153,7 @@ const TabPanels = ({
 				setParams={setParams}
 				handleData={handleData} 
 			/>
-			<MentionField options={data?.data?.employee}/>
+			
 			{
 				params?.task_category_id.length > 0 && (
                 <TypeFilterView 

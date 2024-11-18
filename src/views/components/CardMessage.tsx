@@ -23,6 +23,8 @@ import CustomCheckbox from "./form-fields/Checkbox";
 import UploadDocs from "./UploadDocs";
 import userStore from "../../zustand/UserZustand";
 import { SendIcons, UploadDocuments } from "../../utils/theme/svg";
+import MentionField from "./form-fields/MentionField";
+import { useEssentailApi } from "../../store/hooks/essentailHooks";
 
 const CommentInput = ({
   name = "comment",
@@ -36,7 +38,9 @@ const CommentInput = ({
   params: TaskPagination;
 }) => {
   const { control } = useFormContext();
-
+  const { data } = useEssentailApi({
+		keys: ["employee", "priority", "task-category"],
+	});
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
@@ -192,9 +196,8 @@ const CommentInput = ({
             </IconButton>
           )}
         </Box>
-        <TextField
+        {/* <TextField
           {...field}
-          // onChange={handleTextChange}
           fullWidth
           size="small"
           placeholder={"Type message"}
@@ -221,17 +224,12 @@ const CommentInput = ({
                   },
                 }}
               >
-                {/* <img
-                                    src={send}
-                                    width={20}
-                                    height={20}
-                                /> */}
                 <SendIcons sx={{ width: 20, height: 20 }} />
               </IconButton>
             ),
           }}
-          // sx={{ my: "22px", width: { xs: "78%", sm: "60%", md: "51%", lg: "43%" } }}
-        />
+        /> */}
+        <MentionField options={data?.data?.employee} row={1} name="comment"  placeholder="Type message" mt loading={loading}/>
       </Box>
     </>
   );
