@@ -23,7 +23,7 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 	useEffect(() => {
 		if (!token && !tokens && error) {
 			navigate("/auth/login");
-			toast.error(error?.error  || '')
+			toast.error((error as { error: string })?.error || 'Invalid User')
 		}
 	}, [token, navigate, tokens, error]);
 

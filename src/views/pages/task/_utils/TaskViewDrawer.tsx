@@ -7,7 +7,6 @@ import { useTheme } from "@mui/material";
 import ProfileLogo from '../../../components/sidebar/ProfileLogo';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import { CancelIcons } from '../../../../utils/theme/svg';
-import { toast } from 'sonner';
 
 
 type ErrorType = {
