@@ -8,6 +8,7 @@ import { getLocalStorage } from "../../utils/helpers/storageConfigs";
 import { NAV, SESSIONANDLOCAL } from "../../utils/constants";
 import { useGetMeApi } from "../../store/hooks/authHooks";
 import TaskPopUp from "../components/popupComponents/TaskPopUp";
+import { toast } from "sonner";
 
 const AuthLayout = ({ children }: ReactComponentType) => {
 	const theme = useTheme();
@@ -16,14 +17,19 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 	const { setUser, token } = userStore();
 
 	const navigate = useNavigate();
-	const { data } = useGetMeApi();
+	const { data, error } = useGetMeApi();
 	const viewUserData = data?.data;
 
 	useEffect(() => {
-		if (!token && !tokens) {
+		if (!token && !tokens && error) {
 			navigate("/auth/login");
+			toast.error(error?.error || '')
 		}
-	}, [token, navigate, tokens]);
+	}, [token, navigate, tokens, error]);
+
+	useEffect(() => {
+
+	}, [error])
 
 	useEffect(() => {
 		if (viewUserData) {
@@ -32,9 +38,11 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 	}, [data, setUser, viewUserData]);
 
 	return (
-		<Box sx={{ display: "flex", position: "relative", height: "100%" , overflow: "hidden", 
+		<Box sx={{
+			display: "flex", position: "relative", height: "100%", overflow: "hidden",
 			'& ::-webkit-scrollbar': { width: 0, background: 'transparent' },
-			'&': { scrollbarWidth: 'none' }}}>
+			'&': { scrollbarWidth: 'none' }
+		}}>
 			<Box sx={{
 				padding: NAV.CHILDMARGIN + "px",
 				display: "flex",
@@ -51,7 +59,7 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 					position: "fixed",
 					bottom: 50,
 					right: 40,
-					zIndex:2
+					zIndex: 2
 				}}
 			>
 				<TaskPopUp />

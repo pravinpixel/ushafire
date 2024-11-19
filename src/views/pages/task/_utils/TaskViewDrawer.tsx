@@ -5,17 +5,32 @@ import ProgressBar from '../../../components/ProgressBar';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/material";
 import ProfileLogo from '../../../components/sidebar/ProfileLogo';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import { CancelIcons } from '../../../../utils/theme/svg';
 
 
-const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { openDrawer: TaskFormType['id'], handleCloseDrawer: () => void ,params: TaskPagination,
-	setParams: Dispatch<SetStateAction<TaskPagination>>}) => {
+type ErrorType = {
+    status: number,
+}
 
-    const { data , isLoading } = useTaskListView(openDrawer);
+const TaskViewDrawer = ({ openDrawer, handleCloseDrawer, params, setParams }: {
+    openDrawer: TaskFormType['id'], handleCloseDrawer: () => void, params: TaskPagination,
+    setParams: Dispatch<SetStateAction<TaskPagination>>
+}) => {
+
+    const { data, isLoading, error } = useTaskListView(openDrawer);
     const theme = useTheme();
     const cardWidth = useMediaQuery(theme.breakpoints.down('sm'));
 
+    useEffect(() => {
+        const status = (error as ErrorType)?.status || ''
+        if (status === 406) {
+            handleCloseDrawer()
+        } else if (status === 402) {
+            handleCloseDrawer()
+        }
+
+    }, [error, handleCloseDrawer])
 
     return (
         <>
@@ -30,16 +45,16 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                             borderRadius: "17px 0px 0px 17px",
                             padding: 0,
                             boxShadow: "1",
-                            scrollbarWidth:'none',
+                            scrollbarWidth: 'none',
                             '@media (max-width: 599px)': {
                                 borderRadius: "0px",
-							  }
+                            }
                         },
                         "& .MuiBackdrop-root": {
                             // backgroundColor: "transparent",
                             '@media (max-width: 599px)': {
                                 backgroundColor: "white",
-							  }
+                            }
                         },
                     }}
                 >
@@ -53,8 +68,8 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                             <>
                                 {cardWidth &&
                                     <Box padding={2}>
-                            
-                                            {/* <img
+
+                                        {/* <img
                                                 src={cancel_Icon}
                                                 alt="arrow"
                                                 width="10"
@@ -62,18 +77,18 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer,params, setParams}: { op
                                                 onClick={handleCloseDrawer}
                                                 style={{ cursor: "pointer", marginLeft: "15px" }}
                                             /> */}
-                                              <Box component={'div'} onClick={handleCloseDrawer}
-                                                style={{ cursor: "pointer", }}>
-                                               <CancelIcons />
-                                              </Box>
-                                      
+                                        <Box component={'div'} onClick={handleCloseDrawer}
+                                            style={{ cursor: "pointer", }}>
+                                            <CancelIcons />
+                                        </Box>
+
                                         <ProfileLogo onClick={() => { }} />
                                     </Box>}
                                 <CardView
                                     handleCloseDrawer={handleCloseDrawer}
                                     viewTask={data?.data}
                                     params={params}
-                                    setParams={ setParams}
+                                    setParams={setParams}
                                 />
                             </>
                         ) : (

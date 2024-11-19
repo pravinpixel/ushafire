@@ -78,21 +78,23 @@ API.interceptors.response.use(
 				...error.response.data,
 				bufferResponse: error?.response?.data,
 				status: error.response.status,
-			}  as AxiosResponse['data'];
+			} as AxiosResponse['data'];
 			if (error.response.status === 401) {
-				const pathToSkip = "login";
-				const url = String(window.location.href).split("/");
-				if (!url.includes(pathToSkip)) {
-					unsetLocalStorage();
-					handleRedirect();
-				}
+				// const pathToSkip = "login";
+				// const url = String(window.location.href).split("/");
+				// if (!url.includes(pathToSkip)) {
+				// 	unsetLocalStorage();
+				// 	handleRedirect();
+				// }
+				return Promise.reject(errorData);
 			}
 			if (error.response.status === 403) {
 				handleRedirect();
-				// if (!isRefreshing) {
-				//   isRefreshing = true;
+				if (!isRefreshing) {
+				  isRefreshing = true;
 				//   refetchToken();
-				// }
+				}
+				return Promise.reject(errorData);
 			}
 
 			return Promise.reject(errorData);
