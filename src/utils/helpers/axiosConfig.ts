@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { SESSIONANDLOCAL } from "../constants";
 import { getLocalStorage, unsetLocalStorage } from "./storageConfigs";
+import { toast } from "sonner";
 
 const API = axios.create({
 	baseURL: import.meta.env.VITE_BASE_URL,
@@ -91,9 +92,13 @@ API.interceptors.response.use(
 			if (error.response.status === 403) {
 				handleRedirect();
 				if (!isRefreshing) {
-				  isRefreshing = true;
-				//   refetchToken();
+					isRefreshing = true;
+					//   refetchToken();
 				}
+				return Promise.reject(errorData);
+			}
+			if (error.response.status === 406) {
+				toast.error(errorData?.message||"")
 				return Promise.reject(errorData);
 			}
 

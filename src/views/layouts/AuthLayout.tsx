@@ -23,7 +23,7 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 	useEffect(() => {
 		if (!token && !tokens && error) {
 			navigate("/auth/login");
-			toast.error(error?.error || '')
+			toast.error(error?.error  || '')
 		}
 	}, [token, navigate, tokens, error]);
 

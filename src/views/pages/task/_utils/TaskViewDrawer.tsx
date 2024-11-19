@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material";
 import ProfileLogo from '../../../components/sidebar/ProfileLogo';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import { CancelIcons } from '../../../../utils/theme/svg';
+import { toast } from 'sonner';
 
 
 type ErrorType = {
@@ -25,6 +26,7 @@ const TaskViewDrawer = ({ openDrawer, handleCloseDrawer, params, setParams }: {
     useEffect(() => {
         const status = (error as ErrorType)?.status || ''
         if (status === 406) {
+            // toast.error(error?.message||"")
             handleCloseDrawer()
         } else if (status === 402) {
             handleCloseDrawer()
