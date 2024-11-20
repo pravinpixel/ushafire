@@ -26,7 +26,7 @@ export const ReactLayout = React.memo(() => {
 			},
 		},
 	}))
-	if (token || tokens) {
+	if (!token || !tokens) {
 		toast.error("Invalid User")
 		return <Navigate replace to='/auth/login' />
 	}
