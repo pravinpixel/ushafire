@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Main from "./utils/Main";
@@ -9,6 +9,7 @@ import { NAV, SESSIONANDLOCAL } from "../../utils/constants";
 import { useGetMeApi } from "../../store/hooks/authHooks";
 import TaskPopUp from "../components/popupComponents/TaskPopUp";
 import { toast } from "sonner";
+import LoadingComponent from "../components/LoadingComponent";
 
 const AuthLayout = ({ children }: ReactComponentType) => {
 	const theme = useTheme();
@@ -17,7 +18,7 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 	const { setUser, token } = userStore();
 
 	const navigate = useNavigate();
-	const { data, error } = useGetMeApi();
+	const { data, error, isLoading } = useGetMeApi();
 	const viewUserData = data?.data;
 
 	useEffect(() => {
@@ -36,6 +37,10 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 			setUser(viewUserData);
 		}
 	}, [data, setUser, viewUserData]);
+
+	if(isLoading){
+		return <LoadingComponent />
+	}
 
 	return (
 		<Box sx={{
