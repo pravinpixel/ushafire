@@ -1,36 +1,31 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import Main from "./utils/Main";
-import userStore from "../../zustand/UserZustand";
-import Sidebar from "./utils/Sidebar";
-import { getLocalStorage } from "../../utils/helpers/storageConfigs";
-import { NAV, SESSIONANDLOCAL } from "../../utils/constants";
-import { useGetMeApi } from "../../store/hooks/authHooks";
-import TaskPopUp from "../components/popupComponents/TaskPopUp";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useGetMeApi } from "../../store/hooks/authHooks";
+import { NAV } from "../../utils/constants";
+import userStore from "../../zustand/UserZustand";
+import TaskPopUp from "../components/popupComponents/TaskPopUp";
+import Main from "./utils/Main";
+import Sidebar from "./utils/Sidebar";
 import LoadingComponent from "../components/LoadingComponent";
 
 const AuthLayout = ({ children }: ReactComponentType) => {
 	const theme = useTheme();
 	const media = useMediaQuery(theme.breakpoints.up("md"));
-	const tokens = getLocalStorage(SESSIONANDLOCAL.PROJECT_ACCESS_TOKEN);
-	const { setUser, token } = userStore();
+	// const tokens = getLocalStorage(SESSIONANDLOCAL.PROJECT_ACCESS_TOKEN);
+	const { setUser } = userStore();
 
 	const navigate = useNavigate();
-	const { data, error, isLoading } = useGetMeApi();
+	const { data, error, isError, isLoading } = useGetMeApi();
 	const viewUserData = data?.data;
 
 	useEffect(() => {
-		if (!token && !tokens && error) {
-			navigate("/auth/login");
-			toast.error((error as { error: string })?.error || 'Invalid User')
+		if (isError && error) {
+			navigate('/auth/login')
+			toast.error((error as { error: string })?.error || "Invalid User")
 		}
-	}, [token, navigate, tokens, error]);
-
-	useEffect(() => {
-
-	}, [error])
+	}, [isError, error, navigate]);
 
 	useEffect(() => {
 		if (viewUserData) {
@@ -38,10 +33,11 @@ const AuthLayout = ({ children }: ReactComponentType) => {
 		}
 	}, [data, setUser, viewUserData]);
 
-	if(isLoading){
+	if (isLoading) {
 		return <LoadingComponent />
 	}
 
+	
 	return (
 		<Box sx={{
 			display: "flex", position: "relative", height: "100%", overflow: "hidden",

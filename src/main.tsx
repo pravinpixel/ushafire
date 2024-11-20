@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Navigate } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import App from "./App.tsx";
 import "./index.css";
 import ThemeProvider from "./utils/theme/ThemeConfig.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import LoadingComponent from "./views/components/LoadingComponent.tsx";
-import { Toaster } from "sonner";
+import { toast, Toaster } from "sonner";
 import { Box } from "@mui/material";
+import userStore from "./zustand/UserZustand.tsx";
+import { getLocalStorage } from "./utils/helpers/storageConfigs.ts";
+import { SESSIONANDLOCAL } from "./utils/constants/index.ts";
 
 
 
 export const ReactLayout = React.memo(() => {
+	const token = userStore().token
+	const tokens = getLocalStorage(SESSIONANDLOCAL.PROJECT_ACCESS_TOKEN)
 	const [cilent] = useState(new QueryClient({
 		defaultOptions: {
 			queries: {
@@ -21,6 +26,10 @@ export const ReactLayout = React.memo(() => {
 			},
 		},
 	}))
+	if (token || tokens) {
+		toast.error("Invalid User")
+		return <Navigate replace to='/auth/login' />
+	}
 	return <BrowserRouter>
 		<Toaster richColors />
 		<ThemeProvider>
@@ -30,8 +39,8 @@ export const ReactLayout = React.memo(() => {
 					height: "100vh",
 					overflow: "hidden",
 					width: "100vw",
-					background: "white", 
-				
+					background: "white",
+
 				}}>
 					<QueryClientProvider client={cilent}>
 						<App />
