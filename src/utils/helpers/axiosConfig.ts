@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { SESSIONANDLOCAL } from "../constants";
-import { getLocalStorage, unsetLocalStorage } from "./storageConfigs";
+import { getLocalStorage } from "./storageConfigs";
 import { toast } from "sonner";
 
 const API = axios.create({
