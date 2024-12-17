@@ -25,6 +25,7 @@ import {
 import { Typography } from "@mui/material";
 import { DownloadIcons, FilterCancelIcons } from "../../../utils/theme/svg";
 import { useTaskDownload } from "../../../store/hooks/taskHooks";
+import { CircularProgress } from "@mui/material";
 
 type TabListType = {
   label: string;
@@ -159,7 +160,7 @@ const TabPanels = ({
     }));
   };
 
-  const { mutateAsync } = useTaskDownload(params?.tab);
+  const { mutateAsync,isLoading:downloadLoading } = useTaskDownload(params?.tab);
   const handleDownload = async () => {
     try {
       await mutateAsync();
@@ -244,7 +245,8 @@ const TabPanels = ({
             cursor: "pointer",
           }}
         >
-          <Stack
+          {
+            downloadLoading ?  <CircularProgress  size="20px" sx={{color:"#88344C"}}/>:  <Stack
             gap={"10px"}
             sx={{
               display: "flex",
@@ -265,6 +267,8 @@ const TabPanels = ({
                 : "My Assigned Task Report"}
             </Typography>
           </Stack>
+          }
+         
         </Box>
       ) : (
         <Box sx={{ mt: "24px !important" }}></Box>
