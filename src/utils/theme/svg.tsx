@@ -1982,4 +1982,18 @@ export const DeletedIcons = (props: SvgIconOwnProps) =>
             ...props,
           },
         });
-      
+        export const DownloadIcons = (props: SvgIconOwnProps) =>
+          createIcon({
+            icon: (
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.5 16.5H1.5M14 8.16667L9 13.1667M9 13.1667L4 8.16667M9 13.1667V1.5" stroke="#88344C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>              
+            ),
+            props: {
+              sx: {
+                color: "#FFB627",
+              },
+              ...props,
+            },
+          });
+        

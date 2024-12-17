@@ -5,13 +5,15 @@ type ApiTypes<R> = {
 	url: string;
 	params?: R;
 	formData?: R;
+	responseType?:any;
 };
 
 type CustomResponse<T> = AxiosResponse<T>;
 
-export const GetApi = async <T, R = unknown>({ url, params }: ApiTypes<R>): Promise<CustomResponse<T>> => {
+export const GetApi = async <T, R = unknown>({ url, params ,responseType}: ApiTypes<R>): Promise<CustomResponse<T>> => {
 	return await API.get(url, {
 		params,
+		responseType 
 	});
 };
 

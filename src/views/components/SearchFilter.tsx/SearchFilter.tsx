@@ -8,7 +8,7 @@ import TypeFilter from "../form-fields/TypeFilter";
 export default function SearchFilter({ params, setParams,handleData }: ParamsType) {
   return (
     <Grid container justifyContent={'space-between'} sx={{
-      my:'24px !important'
+      mb:'24px !important'
     }}>
       <Grid item xs={4}  sm={7} md={7} lg={9.2}>
         <SearchBar setParams={setParams} params={params}  />
