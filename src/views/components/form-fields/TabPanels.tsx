@@ -242,7 +242,6 @@ const TabPanels = ({
             display: "flex",
             justifyContent: "end",
             alignItems: "end",
-            cursor: "pointer",
           }}
         >
            <Stack
@@ -256,11 +255,11 @@ const TabPanels = ({
             
           >
             {
-            downloadLoading ?  <CircularProgress  size="20px" sx={{color:"#88344C"}}/>: <Box onClick={handleDownload}><DownloadIcons sx={{ width: "20px", height: "20px" }} /></Box>}
+            downloadLoading ?  <CircularProgress  size="20px" sx={{color:"#88344C"}}/>: <Box onClick={handleDownload} sx={{cursor:'pointer'}}><DownloadIcons sx={{ width: "20px", height: "20px" }} /></Box>}
             <Typography
               variant="f14"
               color={"#88344C"}
-              sx={{ fontWeight: fontWeightBold }}
+              sx={{ fontWeight: fontWeightBold ,cursor:'pointer'}}
               onClick={handleDownload}
             >
               {params?.tab === "my_task"
