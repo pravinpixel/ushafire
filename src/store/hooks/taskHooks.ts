@@ -115,13 +115,14 @@ export const useCloseTask = () => {
   });
 };
 
-export const useTaskDownload = (url?: string | null) => {
+export const useTaskDownload = (url?: string) => {
   return useMutation({
     mutationFn: async () =>{
 		const responseType = 'arraybuffer';
       return await GetApi<TaskFormType>({ url: downloadUrl + `/${url}`, responseType})},
     onSuccess: (res) => {
-      downloadFileExcel(res);
+    
+      downloadFileExcel(res,url);
     },
     onError: (error: any) => {
       const errors = String.fromCharCode.apply(
